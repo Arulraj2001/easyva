@@ -1,0 +1,108 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Product name"
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL-friendly identifier (auto-generated from title)"
+    },
+    "price": {
+      "type": "number",
+      "description": "Price in INR"
+    },
+    "original_price": {
+      "type": "number",
+      "description": "Original price before discount"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Bathroom Essentials",
+        "Kitchen Organizers",
+        "Premium Dispensers",
+        "Magnetic Storage Systems"
+      ],
+      "description": "Product category"
+    },
+    "badge": {
+      "type": "string",
+      "description": "Badge label like 'New', 'Bestseller', 'Premium'"
+    },
+    "short_description": {
+      "type": "string",
+      "description": "Brief product summary (1-2 sentences)"
+    },
+    "full_description": {
+      "type": "string",
+      "description": "Full product description"
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of key features"
+    },
+    "specifications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Technical specifications (label-value pairs)"
+    },
+    "material": {
+      "type": "string",
+      "description": "Primary material"
+    },
+    "dimensions": {
+      "type": "string",
+      "description": "Product dimensions"
+    },
+    "package_contents": {
+      "type": "string",
+      "description": "What's included in the package"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Product image URLs"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "description": "Show in featured section on homepage"
+    },
+    "stock_status": {
+      "type": "string",
+      "enum": [
+        "In Stock",
+        "Limited Stock",
+        "Out of Stock"
+      ],
+      "default": "In Stock"
+    },
+    "sort_order": {
+      "type": "number",
+      "description": "Display order"
+    }
+  },
+  "required": [
+    "title",
+    "price",
+    "category"
+  ]
+}

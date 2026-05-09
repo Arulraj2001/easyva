@@ -7,7 +7,7 @@ const contactMethods = [
   {
     icon: MessageCircle,
     title: 'WhatsApp',
-    detail: '+91 9XXXXXXXXX',
+    detail: '+91 9342879701',
     sub: 'Fastest response — typically within minutes',
     action: () => openWhatsApp(),
     btnLabel: 'Open WhatsApp',
@@ -16,7 +16,7 @@ const contactMethods = [
   {
     icon: Mail,
     title: 'Email',
-    detail: 'hello@easyva.in',
+    detail: 'muruganboutiqueandcosmetics@gmail.com',
     sub: 'For inquiries and bulk orders',
     action: () => window.location.href = 'mailto:hello@easyva.in',
     btnLabel: 'Send Email',
@@ -24,19 +24,20 @@ const contactMethods = [
   },
   {
     icon: Instagram,
-    title: '@easyva.in',
-    detail: '@easyva.in',
+    title: '@easyva.3011',
+    detail: '@easyva.3011',
     sub: 'Follow for new launches & behind the scenes',
-    action: () => window.open('https://instagram.com', '_blank'),
+    action: () =>
+      window.open('https://instagram.com/easyva.3011', '_blank'),
     btnLabel: 'Follow Us',
     color: 'iris',
   },
   {
     icon: Phone,
     title: 'Phone',
-    detail: '+91 9XXXXXXXXX',
+    detail: '+91 9342879701',
     sub: 'Mon–Sat, 10:00–18:00 IST',
-    action: () => window.location.href = 'tel:+919xxxxxxxxx',
+    action: () => window.location.href = 'tel:+919342879701',
     btnLabel: 'Call Now',
     color: 'biolume',
   },

@@ -62,6 +62,7 @@ export default function Footer() {
                     className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-iris/10 border border-iris/30 text-iris-light text-sm font-medium hover:bg-iris/20 transition-colors"
                   >
                     <Instagram size={15} />
+                    Insta
                   </a>
               </div>
             </div>

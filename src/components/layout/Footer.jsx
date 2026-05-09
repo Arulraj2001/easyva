@@ -88,7 +88,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-ethereal/30 text-sm">
-            © 2026 Easyva. All rights reserved. Premium home & lifestyle brand.
+            © 2026 Easyva. All rights reserved.
           </p>
           <a
               href="https://arulraj2001.github.io/Portfolio/"

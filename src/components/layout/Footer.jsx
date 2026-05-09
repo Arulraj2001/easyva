@@ -55,15 +55,15 @@ export default function Footer() {
                 </button>
 
                 {/* Instagram */}
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-iris/10 border border-iris/30 text-iris-light text-sm font-medium hover:bg-iris/20 transition-colors"
-                >
-                  <Instagram size={15} />
-                  Instagram
-                </a>
+                  <a
+                    href="https://instagram.com/easyva.3011"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-iris/10 border border-iris/30 text-iris-light text-sm font-medium hover:bg-iris/20 transition-colors"
+                  >
+                    <Instagram size={15} />
+                    @easyva.3011
+                  </a>
               </div>
             </div>
 

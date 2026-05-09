@@ -11,8 +11,7 @@ export default function WhatsAppBanner() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="relative rounded-3xl overflow-hidden p-12 md:p-16 text-center"
-          style={{ background: 'linear-gradient(135deg, #1E293B 0%, #0F172A 50%, #1a1a2e 100%)' }}
+          className="relative rounded-3xl overflow-hidden p-12 md:p-16 text-center whatsapp-banner"
         >
           {/* Glowing orbs */}
           <div className="absolute top-0 left-1/4 w-64 h-64 bg-iris/20 rounded-full blur-3xl animate-pulse" />
@@ -45,11 +44,11 @@ export default function WhatsAppBanner() {
               onClick={() => openWhatsApp()}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-3 px-10 py-4 rounded-2xl bg-biolume text-void font-bold text-lg glow-lime"
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-biolume text-void font-bold text-base glow-lime"
             >
-              <MessageCircle size={22} />
+              <MessageCircle size={18} />
               Chat on WhatsApp
-              <ArrowRight size={18} />
+              <ArrowRight size={16} />
             </motion.button>
           </div>
         </motion.div>

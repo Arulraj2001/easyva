@@ -12,6 +12,7 @@ import { AnimatePresence } from 'framer-motion';
 import CustomCursor from '@/components/layout/CustomCursor';
 
 import PageNotFound from './lib/PageNotFound';
+import { ThemeProvider } from './lib/ThemeContext';
 
 import Home from './pages/Home';
 import Products from './pages/Products';
@@ -51,16 +52,18 @@ const AnimatedRoutes = () => {
 
 function App() {
   return (
-    <AuthProvider>
-      <QueryClientProvider client={queryClientInstance}>
-        <Router>
-          <CustomCursor />
-          <AnimatedRoutes />
-        </Router>
+    <ThemeProvider>
+      <AuthProvider>
+        <QueryClientProvider client={queryClientInstance}>
+          <Router>
+            <CustomCursor />
+            <AnimatedRoutes />
+          </Router>
 
-        <Toaster />
-      </QueryClientProvider>
-    </AuthProvider>
+          <Toaster />
+        </QueryClientProvider>
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
 

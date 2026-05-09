@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, MessageCircle } from 'lucide-react';
+import { Menu, X, MessageCircle, Moon, Sun } from 'lucide-react';
 import { openWhatsApp } from '@/lib/whatsapp';
+import { useTheme } from '@/lib/ThemeContext';
 
 const navLinks = [
   { label: 'Home', path: '/' },
@@ -15,6 +16,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -74,15 +76,23 @@ export default function Navbar() {
               })}
             </div>
 
-            {/* WhatsApp CTA */}
+            {/* Desktop actions */}
             <div className="hidden md:flex items-center gap-3">
+              <button
+                onClick={toggleTheme}
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-ethereal transition-all duration-300 hover:bg-white/20"
+                aria-label="Toggle dark mode"
+              >
+                {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+              </button>
+
               <motion.button
                 onClick={() => openWhatsApp()}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 px-4 py-2 rounded-xl bg-biolume text-void font-semibold text-sm transition-all duration-300 hover:bg-biolume-dark glow-lime"
+                className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-biolume text-void font-semibold text-xs transition-all duration-300 hover:bg-biolume-dark glow-lime"
               >
-                <MessageCircle size={15} />
+                <MessageCircle size={14} />
                 WhatsApp
               </motion.button>
             </div>
@@ -121,8 +131,15 @@ export default function Navbar() {
                 </Link>
               ))}
               <button
+                onClick={toggleTheme}
+                className="flex items-center justify-center gap-2 py-3 rounded-xl bg-white/10 text-ethereal hover:bg-white/20 transition-colors"
+              >
+                {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+                {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+              </button>
+              <button
                 onClick={() => openWhatsApp()}
-                className="flex items-center justify-center gap-2 py-3 rounded-xl bg-biolume text-void font-semibold mt-2"
+                className="flex items-center justify-center gap-2 py-2 rounded-xl bg-biolume text-void font-semibold mt-2"
               >
                 <MessageCircle size={16} />
                 Chat on WhatsApp

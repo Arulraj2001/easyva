@@ -222,9 +222,9 @@ export default function ProductDetail() {
               onClick={() => openWhatsApp(product.title)}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="w-full flex items-center justify-center gap-3 py-4 rounded-2xl bg-biolume text-void font-bold text-lg glow-lime"
+              className="w-full flex items-center justify-center gap-3 py-3 rounded-2xl bg-biolume text-void font-bold text-base glow-lime"
             >
-              <MessageCircle size={22} />
+              <MessageCircle size={18} />
               Inquire on WhatsApp
             </motion.button>
           </div>

@@ -47,6 +47,84 @@
     overflow-x: hidden;
   }
 
+  .light body {
+    @apply bg-white text-slate-900;
+    background-color: #F8FAFC;
+    color: #0F172A;
+  }
+
+  .light .glass {
+    background: rgba(255, 255, 255, 0.75);
+    border-color: rgba(15, 23, 42, 0.08);
+  }
+
+  .light .glass-light {
+    background: rgba(255, 255, 255, 0.65);
+    border-color: rgba(15, 23, 42, 0.06);
+  }
+
+  .light .glass-blade {
+    background: rgba(255, 255, 255, 0.8);
+    border-image: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(163, 230, 53, 0.15)) 1;
+  }
+
+  .light .bg-void { background-color: #F8FAFC !important; }
+  .light .bg-void\/90 { background-color: rgba(248, 250, 252, 0.9) !important; }
+  .light .bg-void\/80 { background-color: rgba(248, 250, 252, 0.8) !important; }
+  .light .bg-void\/60 { background-color: rgba(248, 250, 252, 0.6) !important; }
+  .light .bg-void\/50 { background-color: rgba(248, 250, 252, 0.5) !important; }
+  .light .bg-void\/20 { background-color: rgba(248, 250, 252, 0.2) !important; }
+  .light .bg-void\/10 { background-color: rgba(248, 250, 252, 0.1) !important; }
+  .light .bg-lustre { background-color: #E2E8F0 !important; }
+  .light .bg-lustre\/20 { background-color: rgba(226, 232, 240, 0.2) !important; }
+  .light .bg-lustre\/30 { background-color: rgba(226, 232, 240, 0.3) !important; }
+  .light .bg-lustre\/50 { background-color: rgba(226, 232, 240, 0.5) !important; }
+  .light .whatsapp-banner {
+    background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 50%, #CBD5E1 100%) !important;
+  }
+  .light .bg-transparent { background-color: transparent !important; }
+  .light .from-void { --tw-gradient-from: #F8FAFC !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(248, 250, 252, 0)) !important; }
+  .light .from-void\/80 { --tw-gradient-from: rgba(248, 250, 252, 0.8) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(248, 250, 252, 0)) !important; }
+  .light .from-void\/60 { --tw-gradient-from: rgba(248, 250, 252, 0.6) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(248, 250, 252, 0)) !important; }
+  .light .from-void\/20 { --tw-gradient-from: rgba(248, 250, 252, 0.2) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(248, 250, 252, 0)) !important; }
+  .light .via-void { --tw-gradient-stops: var(--tw-gradient-from), #F8FAFC, var(--tw-gradient-to, rgba(248, 250, 252, 0)) !important; }
+  .light .via-void\/20 { --tw-gradient-stops: var(--tw-gradient-from), rgba(248, 250, 252, 0.2), var(--tw-gradient-to, rgba(248, 250, 252, 0)) !important; }
+  .light .via-void\/10 { --tw-gradient-stops: var(--tw-gradient-from), rgba(248, 250, 252, 0.1), var(--tw-gradient-to, rgba(248, 250, 252, 0)) !important; }
+  .light .via-void\/60 { --tw-gradient-stops: var(--tw-gradient-from), rgba(248, 250, 252, 0.6), var(--tw-gradient-to, rgba(248, 250, 252, 0)) !important; }
+  .light .to-void { --tw-gradient-to: #F8FAFC !important; }
+  .light .text-ethereal,
+  .light .text-ethereal\/90,
+  .light .text-ethereal\/80,
+  .light .text-ethereal\/70,
+  .light .text-ethereal\/60,
+  .light .text-ethereal\/50,
+  .light .text-ethereal\/40,
+  .light .text-ethereal\/30,
+  .light .text-ethereal\/20,
+  .light .text-white,
+  .light .text-white\/90,
+  .light .text-white\/80,
+  .light .text-white\/70,
+  .light .text-white\/60,
+  .light .text-white\/50,
+  .light .text-white\/40,
+  .light .text-white\/30 {
+    color: #0F172A !important;
+  }
+
+  .light .text-slate-100,
+  .light .text-slate-200,
+  .light .text-slate-300,
+  .light .text-slate-400 {
+    color: #334155 !important;
+  }
+
+  .light .bg-iris\/10 { background-color: rgba(124, 58, 237, 0.1) !important; }
+  .light .bg-biolume\/10 { background-color: rgba(163, 230, 53, 0.1) !important; }
+  .light .border-white\/10 { border-color: rgba(15, 23, 42, 0.1) !important; }
+  .light .border-white\/8 { border-color: rgba(15, 23, 42, 0.08) !important; }
+  .light .border-white\/5 { border-color: rgba(15, 23, 42, 0.06) !important; }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
     letter-spacing: -0.02em;
@@ -236,6 +314,10 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.whatsapp-banner {
+  background: linear-gradient(135deg, #1E293B 0%, #0F172A 50%, #1a1a2e 100%);
 }
 
 .gradient-text-purple {

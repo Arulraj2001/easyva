@@ -96,7 +96,7 @@ export default function Contact() {
                   onClick={method.action}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  className={`mt-auto py-2 rounded-xl micro-label transition-all duration-300 ${
+                  className={`mt-auto py-1.5 px-3 rounded-xl text-xs font-medium transition-all duration-300 ${
                     isLime
                       ? 'bg-biolume/10 border border-biolume/30 text-biolume hover:bg-biolume/20'
                       : 'bg-iris/10 border border-iris/30 text-iris-light hover:bg-iris/20'
@@ -158,15 +158,17 @@ export default function Contact() {
                 </div>
               </div>
 
-              <motion.button
-                type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full flex items-center justify-center gap-3 py-4 rounded-xl bg-biolume text-void font-bold glow-lime"
-              >
-                <Send size={16} />
-                Send via WhatsApp
-              </motion.button>
+              <div className="flex justify-center mt-4">
+                <motion.button
+                  type="submit"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-biolume text-void font-bold text-sm glow-lime"
+                >
+                  <Send size={14} />
+                  Send via WhatsApp
+                </motion.button>
+              </div>
             </form>
           </motion.div>
 

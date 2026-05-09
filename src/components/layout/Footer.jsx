@@ -108,7 +108,7 @@ export default function Footer() {
                     size={13}
                     className="text-iris-light"
                   />
-                  +91 9XXXXXXXXX
+                  +91 9342879701
                 </div>
 
                 <div className="flex items-center gap-2 text-ethereal/50 text-sm">
@@ -116,7 +116,7 @@ export default function Footer() {
                     size={13}
                     className="text-iris-light"
                   />
-                  hello@easyva.in
+                  muruganboutiqueandcosmetics@gmail.com
                 </div>
 
                 <div className="flex items-center gap-2 text-ethereal/50 text-sm">
@@ -132,7 +132,7 @@ export default function Footer() {
                     size={13}
                     className="text-iris-light"
                   />
-                  @easyva.in
+                  @@easyva.3011
                 </div>
               </div>
             </div>

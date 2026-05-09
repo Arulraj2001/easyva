@@ -90,6 +90,16 @@ export default function Footer() {
           <p className="text-ethereal/30 text-sm">
             © 2026 Easyva. All rights reserved. Premium home & lifestyle brand.
           </p>
+          <a
+              href="https://arulraj2001.github.io/Portfolio/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-xs text-iris-light hover:text-biolume transition-colors flex items-center gap-1"
+            >
+              Developed by Arulraj
+              <ArrowUpRight size={12} />
+            </a>
+          </div>
           <div className="flex gap-6">
             <span className="text-ethereal/20 text-xs">Privacy Policy</span>
             <span className="text-ethereal/20 text-xs">Terms of Use</span>

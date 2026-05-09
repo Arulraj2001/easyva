@@ -132,7 +132,7 @@ export default function Footer() {
                     size={13}
                     className="text-iris-light"
                   />
-                  @@easyva.3011
+                  @easyva.3011
                 </div>
               </div>
             </div>

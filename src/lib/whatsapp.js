@@ -1,4 +1,4 @@
-export const WHATSAPP_NUMBER = "919XXXXXXXXX"; // Replace with actual number e.g. 919876543210
+export const WHATSAPP_NUMBER = "919342879701"; // Replace with actual number e.g. 919876543210
 
 export const openWhatsApp = (productName = null) => {
   const message = productName

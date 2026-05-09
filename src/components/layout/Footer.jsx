@@ -152,7 +152,7 @@ export default function Footer() {
                 rel="noreferrer"
                 className="text-xs text-iris-light hover:text-biolume transition-colors flex items-center gap-1"
               >
-                Developed by Arulraj
+                Developed by Arulraj • Contact me for websites
                 <ArrowUpRight size={12} />
               </a>
             </div>

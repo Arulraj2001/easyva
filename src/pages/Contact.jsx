@@ -250,24 +250,18 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Map placeholder */}
-            <div className="relative rounded-2xl overflow-hidden h-64 glass border border-white/8 flex items-center justify-center">
-              <div className="absolute inset-0 bg-gradient-to-br from-iris/5 to-biolume/5" />
-
-              <div className="relative text-center">
-                <MapPin
-                  size={32}
-                  className="text-iris-light mx-auto mb-3"
-                />
-
-                <p className="text-ethereal/50 text-sm">
-                  India-wide delivery
-                </p>
-
-                <p className="micro-label text-iris-light mt-1">
-                  All major cities
-                </p>
-              </div>
+            {/* Map */}
+            <div className="relative rounded-2xl overflow-hidden h-64 glass border border-white/8">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d18629.805755487785!2d77.0179018490618!3d11.006011823615582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDAwJzMxLjAiTiA3N8KwMDEnMzcuNiJF!5e0!3m2!1sen!2sin!4v1778308782000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              ></iframe>
             </div>
 
             <div className="glass rounded-2xl p-6 border border-biolume/20">

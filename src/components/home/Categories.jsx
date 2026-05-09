@@ -6,7 +6,7 @@ const categories = [
   {
     name: 'Bathroom Essentials',
     desc: 'Elevate your daily ritual',
-    image: 'https://images.unsplash.com/photo-1552585130-13df05b5b8f3?w=800&q=80',
+    image: 'https://console.cloudinary.com/app/c-d6bb1782566ab045945214df8e763b/image/home',
     span: 'col-span-2'
   },
   {

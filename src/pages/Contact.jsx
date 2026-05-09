@@ -92,12 +92,11 @@ export default function Contact() {
                   <p className="text-sm text-ethereal/70 mt-0.5">{method.detail}</p>
                   <p className="text-xs text-ethereal/30 mt-1">{method.sub}</p>
                 </div>
-                <motion.button
+<motion.button
                   onClick={method.action}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  className={`mt-auto py-1.5 px-3 rounded-xl text-xs font-medium transition-all duration-300 ${
-                    isLime
+                  className={`mt-auto px-2 py-0.5 rounded-lg text-xs font-medium transition-all duration-300 whitespace-nowrap ${isLime
                       ? 'bg-biolume/10 border border-biolume/30 text-biolume hover:bg-biolume/20'
                       : 'bg-iris/10 border border-iris/30 text-iris-light hover:bg-iris/20'
                   }`}

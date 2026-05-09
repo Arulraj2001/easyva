@@ -97,13 +97,24 @@ export default function Navbar() {
               </motion.button>
             </div>
 
-            {/* Mobile Toggle */}
-            <button
-              className="md:hidden text-ethereal p-2"
-              onClick={() => setMobileOpen(!mobileOpen)}
-            >
-              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-            </button>
+            {/* Mobile actions */}
+            <div className="md:hidden flex items-center gap-1">
+              <button
+                onClick={toggleTheme}
+                className="flex items-center justify-center w-8 h-8 rounded-full bg-white/10 text-ethereal transition-all duration-300 hover:bg-white/20"
+                aria-label="Toggle dark mode"
+              >
+                {theme === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
+              </button>
+
+              {/* Mobile Toggle */}
+              <button
+                className="text-ethereal p-2"
+                onClick={() => setMobileOpen(!mobileOpen)}
+              >
+                {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+              </button>
+            </div>
           </div>
         </div>
       </motion.nav>
@@ -130,13 +141,6 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <button
-                onClick={toggleTheme}
-                className="flex items-center justify-center gap-2 py-3 rounded-xl bg-white/10 text-ethereal hover:bg-white/20 transition-colors"
-              >
-                {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
-                {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-              </button>
               <button
                 onClick={() => openWhatsApp()}
                 className="flex items-center justify-center gap-2 py-2 rounded-xl bg-biolume text-void font-semibold mt-2"

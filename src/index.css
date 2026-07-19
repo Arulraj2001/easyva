@@ -151,6 +151,34 @@
   .light .border-white\/8 { border-color: rgba(15, 23, 42, 0.08) !important; }
   .light .border-white\/5 { border-color: rgba(15, 23, 42, 0.06) !important; }
 
+  html.dark [class*="text-iris"] {
+    color: #A3E635 !important;
+  }
+
+  .text-ethereal,
+  .text-ethereal\/90,
+  .text-ethereal\/80,
+  .text-ethereal\/70,
+  .text-ethereal\/60,
+  .text-ethereal\/50,
+  .text-ethereal\/40,
+  .text-ethereal\/30,
+  .text-ethereal\/20,
+  .text-white,
+  .text-white\/90,
+  .text-white\/80,
+  .text-white\/70,
+  .text-white\/60,
+  .text-white\/50,
+  .text-white\/40,
+  .text-white\/30,
+  .text-slate-100,
+  .text-slate-200,
+  .text-slate-300,
+  .text-slate-400 {
+    color: #FFFFFF !important;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
     letter-spacing: -0.02em;
@@ -316,6 +344,30 @@
 @keyframes float-y {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }
+}
+
+@keyframes footer-credit-blink {
+  0%, 100% {
+    opacity: 0.35;
+    text-shadow: none;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 10px currentColor, 0 0 22px currentColor;
+  }
+}
+
+.footer-credit-blink {
+  color: #A3E635;
+  animation: footer-credit-blink 1.25s ease-in-out infinite;
+}
+
+.light .footer-credit-blink {
+  color: #4C1D95;
+}
+
+.footer-credit-blink:hover {
+  opacity: 1;
 }
 
 .float-animate {

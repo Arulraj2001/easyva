@@ -152,7 +152,7 @@ export default function Footer() {
                 href="https://arulraj2001.github.io/Portfolio/"
                 target="_blank"
                 rel="noreferrer"
-                className="text-xs text-iris-light hover:text-biolume transition-colors flex items-center gap-1"
+                className="footer-credit-blink text-xs transition-colors flex items-center gap-1"
               >
                 Developed by Arulraj • Contact me for websites
                 <ArrowUpRight size={12} />

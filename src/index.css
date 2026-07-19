@@ -151,6 +151,73 @@
   .light .border-white\/8 { border-color: rgba(15, 23, 42, 0.08) !important; }
   .light .border-white\/5 { border-color: rgba(15, 23, 42, 0.06) !important; }
 
+  @media (max-width: 767px) {
+    .light .hero-mobile-dark {
+      color: #F8FAFC;
+    }
+
+    .light .hero-mobile-dark .text-ethereal,
+    .light .hero-mobile-dark .text-ethereal\/90,
+    .light .hero-mobile-dark .text-ethereal\/80,
+    .light .hero-mobile-dark .text-ethereal\/70,
+    .light .hero-mobile-dark .text-ethereal\/60,
+    .light .hero-mobile-dark .text-ethereal\/50,
+    .light .hero-mobile-dark .text-ethereal\/40,
+    .light .hero-mobile-dark .text-ethereal\/30,
+    .light .hero-mobile-dark .text-ethereal\/20,
+    .light .hero-mobile-dark .text-white,
+    .light .hero-mobile-dark .text-white\/90,
+    .light .hero-mobile-dark .text-white\/80,
+    .light .hero-mobile-dark .text-white\/70,
+    .light .hero-mobile-dark .text-white\/60,
+    .light .hero-mobile-dark .text-white\/50,
+    .light .hero-mobile-dark .text-white\/40,
+    .light .hero-mobile-dark .text-white\/30,
+    .light .hero-mobile-dark .text-slate-100,
+    .light .hero-mobile-dark .text-slate-200,
+    .light .hero-mobile-dark .text-slate-300,
+    .light .hero-mobile-dark .text-slate-400 {
+      color: #F8FAFC !important;
+    }
+
+    .light .hero-mobile-dark .text-biolume,
+    .light .hero-mobile-dark .text-biolume\/90,
+    .light .hero-mobile-dark .text-biolume\/80,
+    .light .hero-mobile-dark .text-biolume\/50,
+    .light .hero-mobile-dark .text-biolume\/30,
+    .light .hero-mobile-dark .text-biolume\/20,
+    .light .hero-mobile-dark .fill-biolume,
+    .light .hero-mobile-dark .bg-biolume,
+    .light .hero-mobile-dark .bg-biolume\/10,
+    .light .hero-mobile-dark .bg-biolume\/20,
+    .light .hero-mobile-dark .border-biolume\/20,
+    .light .hero-mobile-dark .border-biolume\/30 {
+      color: #A3E635 !important;
+      background-color: #A3E635 !important;
+      border-color: #A3E635 !important;
+      fill: #A3E635 !important;
+    }
+
+    .light .hero-mobile-dark .text-iris-light,
+    .light .hero-mobile-dark .bg-iris,
+    .light .hero-mobile-dark .bg-iris\/10,
+    .light .hero-mobile-dark .border-iris\/20,
+    .light .hero-mobile-dark .border-iris\/30 {
+      color: #8B5CF6 !important;
+      background-color: #7C3AED !important;
+      border-color: rgba(124, 58, 237, 0.3) !important;
+    }
+
+    .light .hero-mobile-dark .hero-mobile-light-tone,
+    .light .hero-mobile-dark .hero-mobile-light-tone .text-biolume,
+    .light .hero-mobile-dark .hero-mobile-light-tone .text-ethereal {
+      color: #6D28D9 !important;
+      background-color: transparent !important;
+      border-color: rgba(109, 39, 217, 0.3) !important;
+      fill: #6D28D9 !important;
+    }
+  }
+
   html.dark [class*="text-iris"] {
     color: #A3E635 !important;
   }

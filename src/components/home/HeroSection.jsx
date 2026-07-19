@@ -52,7 +52,13 @@ export default function HeroSection() {
   }));
 
   return (
-    <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden bg-void">
+    <section ref={heroRef} className="hero-mobile-dark relative min-h-screen flex items-center overflow-hidden bg-void">
+      <div
+        className="absolute inset-0 md:hidden bg-center bg-cover"
+        style={{ backgroundImage: "url('https://res.cloudinary.com/dk8odjbsk/image/upload/v1784452492/easyva_bg_oig26y.jpg')" }}
+      />
+      <div className="absolute inset-0 md:hidden bg-gradient-to-br from-void/90 via-void/75 to-void/90" />
+
       {/* Background blobs */}
       <FloatingBlob x="10%" y="20%" size={500} color="#7C3AED" delay={0} />
       <FloatingBlob x="60%" y="60%" size={400} color="#A3E635" delay={2} />
@@ -75,7 +81,7 @@ export default function HeroSection() {
             className="flex items-center gap-2 mb-6"
           >
             <div className="w-1 h-6 bg-biolume rounded-full" />
-            <span className="micro-label text-biolume">Premium Home Essentials</span>
+            <span className="micro-label text-biolume hero-mobile-light-tone">Premium Home Essentials</span>
           </motion.div>
 
           <motion.h1
@@ -118,7 +124,7 @@ export default function HeroSection() {
               onClick={() => openWhatsApp()}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
-              className="flex items-center gap-2 px-6 py-3.5 rounded-xl glass border border-biolume/30 text-biolume font-semibold hover:bg-biolume/10 transition-colors"
+              className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-biolume text-white font-semibold transition-colors hero-mobile-light-tone"
             >
               <MessageCircle size={16} />
               WhatsApp Us

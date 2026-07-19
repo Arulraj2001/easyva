@@ -159,6 +159,12 @@
   mix-blend-mode: screen;
 }
 
+.light .cursor-dot {
+  background: #7C3AED;
+  box-shadow: 0 0 14px rgba(124, 58, 237, 0.45);
+  mix-blend-mode: normal;
+}
+
 .cursor-ring {
   width: 10px;
   height: 10px;
@@ -174,11 +180,21 @@
   opacity: 0.6;
 }
 
+.light .cursor-ring {
+  border-color: #7C3AED;
+  opacity: 0.45;
+}
+
 .cursor-ring.expanded {
   width: 60px;
   height: 60px;
   opacity: 1;
   border-color: #A3E635;
+}
+
+.light .cursor-ring.expanded {
+  border-color: #7C3AED;
+  opacity: 0.8;
 }
 
 /* Glassmorphism */

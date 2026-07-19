@@ -130,6 +130,75 @@ export default function About() {
         </div>
       </section>
 
+      {/* Team */}
+      <section className="section-pad">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center justify-center gap-2 mb-4"
+            >
+              <div className="w-1 h-5 bg-iris rounded-full" />
+              <span className="micro-label text-iris-light">The People</span>
+              <div className="w-1 h-5 bg-iris rounded-full" />
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="display-lg font-poppins text-ethereal"
+            >
+              Meet the <span className="gradient-text">Team</span>
+            </motion.h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                name: 'Arjun Varma',
+                role: 'Founder & Creative Director',
+                bio: 'Former industrial designer at Philips. Obsessed with the intersection of utility and beauty. Spent 2 years perfecting the Easyva dispenser pump mechanism.',
+                initials: 'AV',
+                color: 'from-iris to-purple-500'
+              },
+              {
+                name: 'Meera Krishnan',
+                role: 'Head of Product Design',
+                bio: 'Ceramic artist turned product designer. Trained at NID Ahmedabad. Every Easyva ceramic piece passes through her quality inspection personally.',
+                initials: 'MK',
+                color: 'from-biolume to-green-500'
+              },
+              {
+                name: 'Rohan Desai',
+                role: 'Operations & Supply Chain',
+                bio: 'Built supply networks across 12 Indian states. Ensures every Easyva product reaches you in pristine condition within 5 days.',
+                initials: 'RD',
+                color: 'from-iris to-blue-500'
+              }
+            ].map((member, i) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.6 }}
+                className="glass rounded-2xl p-6 border border-white/8 hover:border-iris/30 transition-all duration-300 group text-center"
+              >
+                <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${member.color} flex items-center justify-center mx-auto mb-5 shadow-lg`}>
+                  <span className="font-poppins font-bold text-2xl text-void">{member.initials}</span>
+                </div>
+                <h3 className="font-poppins font-semibold text-ethereal text-lg mb-1">{member.name}</h3>
+                <p className="micro-label text-biolume mb-3">{member.role}</p>
+                <p className="text-ethereal/50 text-sm leading-relaxed">{member.bio}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="void-pad">
         <div className="max-w-7xl mx-auto px-6 text-center">

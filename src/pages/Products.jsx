@@ -4,9 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Search, SlidersHorizontal, X } from 'lucide-react';
 import PageLayout from '@/components/layout/PageLayout';
 import ProductCard from '@/components/ui/ProductCard';
-import { SAMPLE_PRODUCTS } from '@/lib/products-data';
-
-const CATEGORIES = ['All', 'Bathroom Essentials', 'Kitchen Organizers', 'Premium Dispensers', 'Magnetic Storage Systems'];
+import { SAMPLE_PRODUCTS, CATEGORIES } from '@/lib/products-data';
 
 export default function Products() {
   const [products, setProducts] = useState([]);

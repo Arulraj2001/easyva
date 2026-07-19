@@ -24,8 +24,8 @@ export default function CustomCursor() {
 
     let raf;
     const animateRing = () => {
-      ring.current.x += (pos.current.x - ring.current.x) * 0.12;
-      ring.current.y += (pos.current.y - ring.current.y) * 0.12;
+      ring.current.x += (pos.current.x - ring.current.x) * 0.2;
+      ring.current.y += (pos.current.y - ring.current.y) * 0.2;
       if (ringRef.current) {
         ringRef.current.style.left = `${ring.current.x}px`;
         ringRef.current.style.top = `${ring.current.y}px`;

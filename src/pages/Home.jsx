@@ -7,6 +7,7 @@ import WhyEasyva from '@/components/home/WhyEasyva';
 import Categories from '@/components/home/Categories';
 import StatsSection from '@/components/home/StatsSection';
 import WhatsAppBanner from '@/components/home/WhatsAppBanner';
+import Testimonials from '@/components/home/Testimonials';
 import { SAMPLE_PRODUCTS } from '@/lib/products-data';
 
 export default function Home() {
@@ -37,6 +38,7 @@ export default function Home() {
       <WhyEasyva />
       <Categories />
       <StatsSection />
+      <Testimonials />
       <WhatsAppBanner />
     </PageLayout>
   );

@@ -8,6 +8,7 @@ import {
   MapPin,
   ArrowUpRight,
   X,
+  Lock,
 } from 'lucide-react';
 
 import { openWhatsApp } from '@/lib/whatsapp';
@@ -55,15 +56,15 @@ export default function Footer() {
                 </button>
 
                 {/* Instagram */}
-                  <a
-                    href="https://instagram.com/easyva.3011"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-iris/10 border border-iris/30 text-iris-light text-sm font-medium hover:bg-iris/20 transition-colors"
-                  >
-                    <Instagram size={15} />
-                    Insta
-                  </a>
+                <a
+                  href="https://instagram.com/easyva.3011"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-iris/10 border border-iris/30 text-iris-light text-sm font-medium hover:bg-iris/20 transition-colors"
+                >
+                  <Instagram size={15} />
+                  Insta
+                </a>
               </div>
             </div>
 
@@ -78,6 +79,7 @@ export default function Footer() {
                   { label: 'Home', path: '/' },
                   { label: 'Products', path: '/products' },
                   { label: 'About', path: '/about' },
+                  { label: 'FAQ', path: '/faq' },
                   { label: 'Contact', path: '/contact' },
                 ].map((link) => (
                   <a
@@ -158,7 +160,7 @@ export default function Footer() {
             </div>
 
             {/* Policy Links */}
-            <div className="flex gap-6">
+            <div className="flex gap-6 items-center">
               <button
                 onClick={() =>
                   setActiveModal('privacy')
@@ -176,6 +178,14 @@ export default function Footer() {
               >
                 Terms of Use
               </button>
+
+              <a
+                href="/login"
+                className="text-ethereal/20 hover:text-biolume transition-colors flex items-center gap-1 text-xs"
+              >
+                <Lock size={10} />
+                Admin
+              </a>
             </div>
           </div>
         </div>

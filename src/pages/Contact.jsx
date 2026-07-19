@@ -117,7 +117,6 @@ export default function Contact() {
                   </p>
                 </div>
 
-                {/* Updated Small Width Button */}
                 <div className="mt-auto">
                   <motion.button
                     onClick={method.action}

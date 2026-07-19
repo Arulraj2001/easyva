@@ -33,7 +33,7 @@ export default function Categories() {
   return (
     <section className="section-pad">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -67,7 +67,7 @@ export default function Categories() {
               data-cursor="product"
             >
               <Link to={`/products?category=${encodeURIComponent(cat.name)}`}>
-                <div className="relative h-56 md:h-72 overflow-hidden">
+                <div className="relative h-44 md:h-56 overflow-hidden">
                   <motion.img
                     src={cat.image}
                     alt={cat.name}
@@ -79,16 +79,16 @@ export default function Categories() {
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-iris/10" />
 
                   {/* Content */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 flex items-end justify-between">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 flex items-end justify-between">
                     <div>
-                      <p className="micro-label text-biolume mb-1">{cat.desc}</p>
-                      <h3 className="font-poppins font-bold text-xl text-ethereal">{cat.name}</h3>
+                      <p className="text-[9px] uppercase tracking-wider text-biolume mb-0.5">{cat.desc}</p>
+                      <h3 className="font-poppins font-bold text-base text-ethereal">{cat.name}</h3>
                     </div>
                     <motion.div
                       whileHover={{ x: 3, y: -3 }}
-                      className="w-10 h-10 rounded-full glass border border-white/20 flex items-center justify-center"
+                      className="w-8 h-8 rounded-full glass border border-white/20 flex items-center justify-center"
                     >
-                      <ArrowUpRight size={16} className="text-biolume" />
+                      <ArrowUpRight size={14} className="text-biolume" />
                     </motion.div>
                   </div>
                 </div>

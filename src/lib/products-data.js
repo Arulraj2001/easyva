@@ -220,5 +220,221 @@ export const SAMPLE_PRODUCTS = [
     featured: false,
     stock_status: "In Stock",
     sort_order: 6
+  },
+  {
+    title: "Matte Black Soap Dish",
+    slug: "matte-black-soap-dish",
+    price: 449,
+    original_price: 649,
+    category: "Bathroom Essentials",
+    badge: "Essential",
+    short_description: "Sculpted ceramic soap dish with self-draining ridges. Keeps soap dry and counter clean.",
+    full_description: "The Easyva Matte Black Soap Dish is a study in purposeful minimalism. Each dish is cast from high-density ceramic and finished with a matte glaze that resists water spots and soap scum. The self-draining ridge system elevates your soap above standing water, extending its life while keeping your counter pristine. The weighted base and non-slip silicone ring ensure it stays exactly where you place it.",
+    features: [
+      "High-density ceramic with matte glaze finish",
+      "Self-draining ridge architecture",
+      "Non-slip silicone base ring",
+      "Water-spot resistant surface",
+      "Weighs 340g — substantial, stable",
+      "Easy to clean — rinse and wipe"
+    ],
+    specifications: [
+      { label: "Material", value: "High-Density Ceramic" },
+      { label: "Dimensions", value: "12cm × 8cm × 2.5cm" },
+      { label: "Weight", value: "340g" },
+      { label: "Finish", value: "Matte Black" },
+      { label: "Dishwasher Safe", value: "Yes" }
+    ],
+    material: "High-Density Ceramic, Silicone",
+    dimensions: "12cm L × 8cm W × 2.5cm H",
+    package_contents: "1× Soap Dish, 1× Silicone Base Ring",
+    images: [
+      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=90",
+      "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&q=90"
+    ],
+    featured: true,
+    stock_status: "In Stock",
+    sort_order: 7
+  },
+  {
+    title: "Bamboo Vanity Organizer Tray",
+    slug: "bamboo-vanity-organizer-tray",
+    price: 799,
+    original_price: 1099,
+    category: "Bathroom Essentials",
+    badge: "Eco",
+    short_description: "Hand-finished bamboo tray with divided compartments. Organizes daily essentials with natural elegance.",
+    full_description: "The Easyva Bamboo Vanity Organizer Tray brings the warmth of nature to your daily routine. Crafted from sustainably harvested Moso bamboo — one of the fastest-growing renewable resources on Earth — each tray is hand-sanded and finished with food-safe natural oil. The divided compartments keep your watch, rings, cologne, and daily essentials organized without clutter. The raised edges prevent items from rolling off.",
+    features: [
+      "Sustainably harvested Moso bamboo",
+      "Hand-sanded and natural oil finish",
+      "Three divided compartments",
+      "Raised edge design — prevents rolling",
+      "Water-resistant surface",
+      "Anti-scratch felt feet",
+      "Zero plastic packaging"
+    ],
+    specifications: [
+      { label: "Material", value: "Moso Bamboo" },
+      { label: "Dimensions", value: "30cm × 15cm × 4cm" },
+      { label: "Weight", value: "420g" },
+      { label: "Finish", value: "Natural Bamboo" },
+      { label: "Compartments", value: "3" }
+    ],
+    material: "Moso Bamboo, Felt",
+    dimensions: "30cm L × 15cm W × 4cm H",
+    package_contents: "1× Vanity Tray, Care Card",
+    images: [
+      "https://images.unsplash.com/photo-1600494603989-9650cf6dad51?w=800&q=90",
+      "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=800&q=90"
+    ],
+    featured: true,
+    stock_status: "In Stock",
+    sort_order: 8
+  },
+  {
+    title: "Premium Lotion Pump Bottle",
+    slug: "premium-lotion-pump-bottle",
+    price: 999,
+    original_price: 1399,
+    category: "Premium Dispensers",
+    badge: "New",
+    short_description: "UV-protected amber glass bottle with precision lotion pump. Preserves and dispenses with elegance.",
+    full_description: "The Easyva Premium Lotion Pump Bottle is engineered for those who demand both form and function from every object in their home. The amber glass body filters UV light to preserve the integrity of your lotions and serums. The pump mechanism delivers a precise 2ml dose with each press — no more, no less. The wide 4cm opening makes refilling effortless, while the matte-black collar adds a touch of understated luxury.",
+    features: [
+      "UV-protected amber borosilicate glass",
+      "Precision 2ml metered pump",
+      "Wide 4cm opening for easy refill",
+      "Matte-black anodized aluminum collar",
+      "Anti-drip silicone valve",
+      "Compatible with lotions, serums, hand soap"
+    ],
+    specifications: [
+      { label: "Capacity", value: "350ml" },
+      { label: "Material", value: "Amber Borosilicate Glass + Aluminum" },
+      { label: "Height", value: "18cm" },
+      { label: "Base Diameter", value: "7cm" },
+      { label: "Pump Material", value: "Anodized Aluminum" }
+    ],
+    material: "Amber Borosilicate Glass, Anodized Aluminum",
+    dimensions: "18cm H × 7cm Ø",
+    package_contents: "1× Lotion Bottle, 1× Pump Assembly, Instruction Card",
+    images: [
+      "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&q=90",
+      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=90"
+    ],
+    featured: true,
+    stock_status: "In Stock",
+    sort_order: 9
+  },
+  {
+    title: "Adhesive Corner Shelf Set",
+    slug: "adhesive-corner-shelf-set",
+    price: 699,
+    original_price: 999,
+    category: "Magnetic Storage Systems",
+    badge: "Smart",
+    short_description: "No-drill corner shelves with industrial adhesive. Holds up to 5kg each — installs in 30 seconds.",
+    full_description: "The Easyva Adhesive Corner Shelf Set solves the eternal problem of unused corner space. Each shelf uses 3M VHB industrial-grade adhesive — the same technology used to bond glass panels on skyscrapers. No drilling, no screws, no damage. The tempered glass shelves are edge-polished for safety and the aluminum brackets feature a brushed finish that resists fingerprints. Each shelf holds up to 5kg when properly installed.",
+    features: [
+      "3M VHB industrial adhesive — zero drilling",
+      "Tempered glass with polished edges",
+      "Brushed aluminum brackets",
+      "5kg load capacity per shelf",
+      "Fingerprint-resistant coating",
+      "Removable with heat gun — no residue",
+      "Set of 2 shelves"
+    ],
+    specifications: [
+      { label: "Material", value: "Tempered Glass + Aluminum" },
+      { label: "Shelf Size", value: "25cm × 25cm" },
+      { label: "Load Capacity", value: "5kg per shelf" },
+      { label: "Installation", value: "Adhesive — No Drill" },
+      { label: "Includes", value: "2 Shelves + Adhesive Pads" }
+    ],
+    material: "Tempered Glass, 6061 Aluminum, 3M VHB Adhesive",
+    dimensions: "25cm × 25cm × 0.5cm (each shelf)",
+    package_contents: "2× Glass Shelves, 2× Aluminum Brackets, 4× 3M Adhesive Pads, Alcohol Wipes, Installation Guide",
+    images: [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=90",
+      "https://images.unsplash.com/photo-1600494603989-9650cf6dad51?w=800&q=90"
+    ],
+    featured: false,
+    stock_status: "In Stock",
+    sort_order: 10
+  },
+  {
+    title: "Stainless Steel Kitchen Caddy",
+    slug: "stainless-steel-kitchen-caddy",
+    price: 1299,
+    original_price: 1799,
+    category: "Kitchen Organizers",
+    badge: "Premium",
+    short_description: "304 stainless steel countertop caddy with removable liners. The ultimate utensil and tool organizer.",
+    full_description: "The Easyva Stainless Steel Kitchen Caddy is built from 304-grade stainless steel — the same alloy used in professional kitchens. The brushed finish hides fingerprints and water spots, while the removable bamboo liners make cleaning effortless. Five compartments of varying sizes accommodate everything from spatulas to chopsticks. The weighted base and non-slip silicone feet ensure it stays planted during use.",
+    features: [
+      "304 stainless steel — commercial grade",
+      "Brushed finish — hides smudges",
+      "5 compartments for varied tools",
+      "Removable bamboo liners for easy cleaning",
+      "Weighted anti-slip base",
+      "Dishwasher-safe steel body",
+      "Holds up to 15 utensils"
+    ],
+    specifications: [
+      { label: "Material", value: "304 Stainless Steel + Bamboo" },
+      { label: "Dimensions", value: "20cm × 12cm × 15cm" },
+      { label: "Weight", value: "680g" },
+      { label: "Compartments", value: "5" },
+      { label: "Finish", value: "Brushed Steel" }
+    ],
+    material: "304 Stainless Steel, Moso Bamboo",
+    dimensions: "20cm L × 12cm W × 15cm H",
+    package_contents: "1× Steel Caddy, 5× Bamboo Liners, Care Guide",
+    images: [
+      "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=800&q=90",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=90"
+    ],
+    featured: true,
+    stock_status: "Limited Stock",
+    sort_order: 11
+  },
+  {
+    title: "Ceramic Diffuser Set",
+    slug: "ceramic-diffuser-set",
+    price: 849,
+    original_price: 1199,
+    category: "Bathroom Essentials",
+    badge: "Elegant",
+    short_description: "Hand-thrown ceramic reed diffuser with premium fragrance oil. Continuous scent for 8+ weeks.",
+    full_description: "The Easyva Ceramic Diffuser Set combines artisanal craftsmanship with premium aromatherapy. The vessel is hand-thrown on a potter's wheel and fired at 1280°C, resulting in a unique piece with subtle variations in glaze that make each one one-of-a-kind. The included premium fragrance oil — a blend of white tea, bamboo, and cedar — diffuses continuously for 8-10 weeks through natural rattan reeds. No flame, no electricity, just pure ambient elegance.",
+    features: [
+      "Hand-thrown ceramic — each piece unique",
+      "1280°C high-fire stoneware",
+      "Premium fragrance oil (50ml included)",
+      "Natural rattan reed diffusion system",
+      "8-10 weeks continuous fragrance",
+      "Refillable — buy oil separately",
+      "Gift-ready packaging"
+    ],
+    specifications: [
+      { label: "Material", value: "High-fire Stoneware Ceramic" },
+      { label: "Oil Capacity", value: "50ml" },
+      { label: "Duration", value: "8-10 weeks" },
+      { label: "Height", value: "14cm" },
+      { label: "Diameter", value: "8cm" },
+      { label: "Fragrance Notes", value: "White Tea, Bamboo, Cedar" }
+    ],
+    material: "High-fire Stoneware Ceramic, Rattan Reeds",
+    dimensions: "14cm H × 8cm Ø",
+    package_contents: "1× Ceramic Vessel, 1× 50ml Fragrance Oil, 6× Rattan Reeds, Care Card",
+    images: [
+      "https://images.unsplash.com/photo-1600612253971-422e7f7faeb6?w=800&q=90",
+      "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&q=90"
+    ],
+    featured: false,
+    stock_status: "In Stock",
+    sort_order: 12
   }
 ];
+export const CATEGORIES = ['All', 'Bathroom Essentials', 'Kitchen Organizers', 'Premium Dispensers', 'Magnetic Storage Systems'];

@@ -19,6 +19,7 @@ import Products from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import FAQ from './pages/FAQ';
 import Admin from './pages/Admin';
 import LoginForm from './components/auth/LoginForm';
 import ProtectedRoute from './components/auth/ProtectedRoute';
@@ -35,6 +36,7 @@ const AnimatedRoutes = () => {
         <Route path="/products/:slug" element={<ProductDetail />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/faq" element={<FAQ />} />
         <Route path="/login" element={<LoginForm />} />
         <Route
           path="/admin"

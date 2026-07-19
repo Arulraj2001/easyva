@@ -161,14 +161,14 @@ export default function HeroSection() {
               className="absolute top-10 left-10 right-10 glass rounded-3xl overflow-hidden border border-iris/20 shadow-2xl"
             >
               <img
-                src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=90"
+                src="https://res.cloudinary.com/dk8odjbsk/image/upload/v1784452492/easyva_bg_oig26y.jpg"
                 alt="Premium Glass Soap Dispenser"
                 className="w-full h-72 object-cover"
               />
               <div className="p-4 flex justify-between items-center">
                 <div>
-                  <p className="micro-label text-iris-light mb-0.5">Premium Dispensers</p>
-                  <p className="font-poppins font-semibold text-ethereal">Glass Soap Dispenser</p>
+                  <p className="micro-label text-iris-light mb-0.5">Creative Moments</p>
+                  <p className="font-poppins font-semibold text-ethereal">Family Art Set</p>
                 </div>
                 <span className="font-bold text-biolume text-lg">₹1,299</span>
               </div>

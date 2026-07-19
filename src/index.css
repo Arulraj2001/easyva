@@ -140,7 +140,7 @@
   .light .text-biolume\/30 { color: rgba(109, 39, 217, 0.3) !important; }
   .light .text-biolume\/20 { color: rgba(109, 39, 217, 0.2) !important; }
   .light .fill-biolume { fill: #6D28D9 !important; }
-  .light .bg-biolume { background-color: #6D28D9 !important; }
+  .light .bg-biolume { background-color: #6D28D9 !important; color: #FFFFFF !important; }
   .light .bg-biolume\/10 { background-color: rgba(109, 39, 217, 0.1) !important; }
   .light .bg-biolume\/20 { background-color: rgba(109, 39, 217, 0.2) !important; }
   .light .border-biolume\/20 { border-color: rgba(109, 39, 217, 0.2) !important; }

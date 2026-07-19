@@ -149,12 +149,12 @@ export default function Footer() {
               </p>
 
               <a
-                href="https://arulraj2001.github.io/Portfolio/"
+                href="https://wa.me/918637474067?text=Hi%20Arulraj%2C%20I%20got%20your%20contact%20from%20the%20Easyva%20website.%20I%20would%20like%20to%20inquire%20about%20website%20development%20services."
                 target="_blank"
                 rel="noreferrer"
                 className="footer-credit-blink text-xs transition-colors flex items-center gap-1"
               >
-                Developed by Arulraj • Contact me for websites
+                Developed by Arulraj • WhatsApp: 8637474067
                 <ArrowUpRight size={12} />
               </a>
             </div>

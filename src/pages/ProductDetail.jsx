@@ -10,6 +10,14 @@ import { openWhatsApp } from '@/lib/whatsapp';
 import { SAMPLE_PRODUCTS } from '@/lib/products-data';
 import { buildAbsoluteUrl, buildFallbackProductSeo, buildProductStructuredData } from '@/lib/seo';
 
+const parseListItems = (text) => {
+  if (!text) return [];
+  return text
+    .split(/[•*\n]+/)
+    .map(item => item.trim())
+    .filter(item => item.length > 0);
+};
+
 export default function ProductDetail() {
   const { slug } = useParams();
   const [product, setProduct] = useState(null);
@@ -163,7 +171,7 @@ export default function ProductDetail() {
             )}
           </div>
 
-          {/* Right — Dossier (40%) */}
+          {/* Right — Dossier / Purchase actions (40%) */}
           <div className="md:col-span-2 space-y-6 md:sticky md:top-28">
             {/* Category */}
             <div>
@@ -190,54 +198,30 @@ export default function ProductDetail() {
               )}
             </div>
 
-            {/* Description */}
+            {/* Short Description (top fold) */}
             <p className="body-lg text-ethereal/60 leading-relaxed">
-              {product.full_description || product.short_description}
+              {product.short_description || (product.full_description?.slice(0, 160) + '...')}
             </p>
 
-            {/* Features */}
-            {product.features?.length > 0 && (
-              <div className="space-y-2.5">
-                <p className="micro-label text-ethereal/40">Key Features</p>
-                {product.features.map((f, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
-                    className="flex items-start gap-3"
-                  >
-                    <CheckCircle2 size={16} className="text-biolume mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-ethereal/70">{f}</span>
-                  </motion.div>
-                ))}
+            {/* Quick Specs (Material & Dimensions) */}
+            {(product.material || product.dimensions) && (
+              <div className="glass rounded-2xl p-4 border border-white/8 space-y-3">
+                {product.material && (
+                  <div className="flex items-center gap-3 text-sm">
+                    <Layers size={14} className="text-iris-light flex-shrink-0" />
+                    <span className="text-ethereal/40 w-20 flex-shrink-0">Material</span>
+                    <span className="text-ethereal/80">{product.material}</span>
+                  </div>
+                )}
+                {product.dimensions && (
+                  <div className="flex items-center gap-3 text-sm">
+                    <Ruler size={14} className="text-iris-light flex-shrink-0" />
+                    <span className="text-ethereal/40 w-20 flex-shrink-0">Dimensions</span>
+                    <span className="text-ethereal/80">{product.dimensions}</span>
+                  </div>
+                )}
               </div>
             )}
-
-            {/* Quick Specs */}
-            <div className="glass rounded-2xl p-4 border border-white/8 space-y-3">
-              {product.material && (
-                <div className="flex items-center gap-3 text-sm">
-                  <Layers size={14} className="text-iris-light flex-shrink-0" />
-                  <span className="text-ethereal/40 w-20 flex-shrink-0">Material</span>
-                  <span className="text-ethereal/80">{product.material}</span>
-                </div>
-              )}
-              {product.dimensions && (
-                <div className="flex items-center gap-3 text-sm">
-                  <Ruler size={14} className="text-iris-light flex-shrink-0" />
-                  <span className="text-ethereal/40 w-20 flex-shrink-0">Dimensions</span>
-                  <span className="text-ethereal/80">{product.dimensions}</span>
-                </div>
-              )}
-              {product.package_contents && (
-                <div className="flex items-start gap-3 text-sm">
-                  <Package size={14} className="text-iris-light flex-shrink-0 mt-0.5" />
-                  <span className="text-ethereal/40 w-20 flex-shrink-0">Contents</span>
-                  <span className="text-ethereal/80 leading-relaxed">{product.package_contents}</span>
-                </div>
-              )}
-            </div>
 
             {/* CTA */}
             <motion.button
@@ -252,31 +236,120 @@ export default function ProductDetail() {
           </div>
         </div>
 
+        {/* Detailed Information Section */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16 pt-12 border-t border-white/10">
+          {/* Left side: Full Description & Package Contents (2 cols) */}
+          <div className="md:col-span-2 space-y-12">
+            {/* Full Description */}
+            {product.full_description && (
+              <div className="space-y-4">
+                <h2 className="font-poppins font-bold text-2xl text-ethereal">
+                  About the <span className="gradient-text">Product</span>
+                </h2>
+                <p className="body-lg text-ethereal/70 leading-relaxed whitespace-pre-line text-base">
+                  {product.full_description}
+                </p>
+              </div>
+            )}
+
+            {/* Package Contents */}
+            {product.package_contents && (
+              <div className="space-y-4">
+                <div className="flex items-center gap-2.5">
+                  <Package size={20} className="text-iris-light" />
+                  <h2 className="font-poppins font-bold text-2xl text-ethereal">
+                    What's in the <span className="gradient-text">Box</span>
+                  </h2>
+                </div>
+                <div className="glass rounded-3xl p-6 border border-white/8">
+                  {parseListItems(product.package_contents).length > 0 ? (
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
+                      {parseListItems(product.package_contents).map((item, idx) => (
+                        <li key={idx} className="text-ethereal/80 text-sm flex items-start gap-2.5">
+                          <CheckCircle2 size={15} className="text-biolume mt-0.5 flex-shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-ethereal/80 text-sm leading-relaxed whitespace-pre-line">
+                      {product.package_contents}
+                    </p>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Right side: Key Features (1 col) */}
+          <div className="space-y-12">
+            {/* Key Features */}
+            {product.features?.length > 0 && (
+              <div className="space-y-4">
+                <h2 className="font-poppins font-bold text-2xl text-ethereal">
+                  Key <span className="gradient-text">Features</span>
+                </h2>
+                <div className="glass rounded-3xl p-6 border border-white/8 space-y-4">
+                  {product.features.map((f, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.05 }}
+                      className="flex items-start gap-3"
+                    >
+                      <CheckCircle2 size={16} className="text-biolume mt-0.5 flex-shrink-0" />
+                      <span className="text-sm text-ethereal/70">{f}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
         {/* Full Specs Table */}
         {product.specifications?.length > 0 && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-12"
+            className="mt-16 pt-12 border-t border-white/10"
           >
             <h2 className="font-poppins font-bold text-2xl text-ethereal mb-8">
               Technical <span className="gradient-text">Specifications</span>
             </h2>
             <div className="glass rounded-2xl border border-white/8 overflow-hidden">
-              {product.specifications.map((spec, i) => (
-                <div key={i} className={`flex px-6 py-4 ${i % 2 === 0 ? 'bg-white/[0.02]' : ''} ${i !== product.specifications.length - 1 ? 'border-b border-white/5' : ''}`}>
-                  <span className="w-1/3 text-ethereal/40 text-sm">{spec.label}</span>
-                  <span className="text-ethereal/80 text-sm font-medium">{spec.value}</span>
-                </div>
-              ))}
+              {product.specifications.map((spec, i) => {
+                const isList = (spec.label.includes('•') || spec.label.includes('*') || spec.label.includes('\n')) && !spec.value;
+                if (isList) {
+                  return (
+                    <div key={i} className={`px-6 py-5 ${i % 2 === 0 ? 'bg-white/[0.02]' : ''} ${i !== product.specifications.length - 1 ? 'border-b border-white/5' : ''}`}>
+                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {parseListItems(spec.label).map((item, idx) => (
+                          <li key={idx} className="text-ethereal/80 text-sm flex items-start gap-2.5">
+                            <span className="text-iris-light flex-shrink-0 mt-1">•</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                }
+                return (
+                  <div key={i} className={`flex px-6 py-4 ${i % 2 === 0 ? 'bg-white/[0.02]' : ''} ${i !== product.specifications.length - 1 ? 'border-b border-white/5' : ''}`}>
+                    <span className="w-1/3 text-ethereal/40 text-sm flex-shrink-0">{spec.label}</span>
+                    <span className="text-ethereal/80 text-sm font-medium">{spec.value}</span>
+                  </div>
+                );
+              })}
             </div>
           </motion.div>
         )}
 
         {/* Similar Products */}
         {similar.length > 0 && (
-          <div className="mt-14">
+          <div className="mt-16 pt-12 border-t border-white/10">
             <h2 className="font-poppins font-bold text-2xl text-ethereal mb-8">
               Similar <span className="gradient-text">Products</span>
             </h2>

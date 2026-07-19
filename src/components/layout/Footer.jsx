@@ -154,7 +154,7 @@ export default function Footer() {
                 rel="noreferrer"
                 className="footer-credit-blink text-xs transition-colors flex items-center gap-1"
               >
-                Developed by Arulraj • WhatsApp: 8637474067
+                Developed by Arulraj • WhatsApp
                 <ArrowUpRight size={12} />
               </a>
             </div>

@@ -175,7 +175,7 @@ export default function Contact() {
                 },
               ].map((field) => (
                 <div key={field.id} className="gradient-border">
-                  <div className="glass rounded-xl p-px">
+                  <div className="glass rounded-xl border border-[#E0FFFF]/60 p-px">
                     <div className="p-3">
                       <label className="micro-label text-ethereal/40 block mb-2">
                         {field.label}
@@ -186,7 +186,7 @@ export default function Contact() {
                         name={field.id}
                         type={field.type}
                         placeholder={field.placeholder}
-                        className="w-full bg-transparent text-ethereal placeholder:text-ethereal/20 focus:outline-none text-sm input-gradient"
+                        className="w-full rounded-lg border border-[#7C3AED]/70 bg-transparent px-3 py-2 text-ethereal placeholder:text-ethereal/30 focus:outline-none text-sm input-gradient"
                       />
                     </div>
                   </div>
@@ -194,7 +194,7 @@ export default function Contact() {
               ))}
 
               <div className="gradient-border">
-                <div className="glass rounded-xl p-px">
+                <div className="glass rounded-xl border border-[#E0FFFF]/60 p-px">
                   <div className="p-3">
                     <label className="micro-label text-ethereal/40 block mb-2">
                       Message
@@ -205,7 +205,7 @@ export default function Contact() {
                       name="message"
                       rows={4}
                       placeholder="Tell us about your needs..."
-                      className="w-full bg-transparent text-ethereal placeholder:text-ethereal/20 focus:outline-none text-sm resize-none input-gradient"
+                      className="w-full rounded-lg border border-[#7C3AED]/70 bg-transparent px-3 py-2 text-ethereal placeholder:text-ethereal/30 focus:outline-none text-sm resize-none input-gradient"
                     />
                   </div>
                 </div>

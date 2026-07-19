@@ -49,8 +49,11 @@
 
   .light body {
     @apply bg-white text-slate-900;
-    background-color: #F8FAFC;
+    background-color: #E0FFFF;
+    background-image: linear-gradient(180deg, #E0FFFF 0%, #CCFFFF 48%, #F0FFFF 100%);
     color: #0F172A;
+    font-size: 1.03rem;
+    line-height: 1.65;
   }
 
   .light .glass {
@@ -68,30 +71,33 @@
     border-image: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(163, 230, 53, 0.15)) 1;
   }
 
-  .light .bg-void { background-color: #F8FAFC !important; }
-  .light .bg-void\/90 { background-color: rgba(248, 250, 252, 0.9) !important; }
-  .light .bg-void\/80 { background-color: rgba(248, 250, 252, 0.8) !important; }
-  .light .bg-void\/60 { background-color: rgba(248, 250, 252, 0.6) !important; }
-  .light .bg-void\/50 { background-color: rgba(248, 250, 252, 0.5) !important; }
-  .light .bg-void\/20 { background-color: rgba(248, 250, 252, 0.2) !important; }
-  .light .bg-void\/10 { background-color: rgba(248, 250, 252, 0.1) !important; }
+  .light .bg-void {
+    background-color: #E0FFFF !important;
+    background-image: linear-gradient(180deg, #E0FFFF 0%, #CCFFFF 48%, #F0FFFF 100%) !important;
+  }
+  .light .bg-void\/90 { background-color: rgba(224, 255, 255, 0.9) !important; background-image: linear-gradient(180deg, rgba(224, 255, 255, 0.95) 0%, rgba(204, 255, 255, 0.88) 100%) !important; }
+  .light .bg-void\/80 { background-color: rgba(224, 255, 255, 0.8) !important; background-image: linear-gradient(180deg, rgba(224, 255, 255, 0.9) 0%, rgba(204, 255, 255, 0.75) 100%) !important; }
+  .light .bg-void\/60 { background-color: rgba(224, 255, 255, 0.6) !important; background-image: linear-gradient(180deg, rgba(224, 255, 255, 0.75) 0%, rgba(204, 255, 255, 0.5) 100%) !important; }
+  .light .bg-void\/50 { background-color: rgba(224, 255, 255, 0.5) !important; background-image: linear-gradient(180deg, rgba(224, 255, 255, 0.65) 0%, rgba(204, 255, 255, 0.42) 100%) !important; }
+  .light .bg-void\/20 { background-color: rgba(224, 255, 255, 0.2) !important; background-image: linear-gradient(180deg, rgba(224, 255, 255, 0.3) 0%, rgba(204, 255, 255, 0.16) 100%) !important; }
+  .light .bg-void\/10 { background-color: rgba(224, 255, 255, 0.1) !important; background-image: linear-gradient(180deg, rgba(224, 255, 255, 0.2) 0%, rgba(204, 255, 255, 0.08) 100%) !important; }
   .light .bg-lustre { background-color: #E2E8F0 !important; }
   .light .bg-lustre\/20 { background-color: rgba(226, 232, 240, 0.2) !important; }
   .light .bg-lustre\/30 { background-color: rgba(226, 232, 240, 0.3) !important; }
   .light .bg-lustre\/50 { background-color: rgba(226, 232, 240, 0.5) !important; }
   .light .whatsapp-banner {
-    background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 50%, #CBD5E1 100%) !important;
+    background: linear-gradient(135deg, #E0FFFF 0%, #CCFFFF 50%, #B2FFFF 100%) !important;
   }
   .light .bg-transparent { background-color: transparent !important; }
-  .light .from-void { --tw-gradient-from: #F8FAFC !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(248, 250, 252, 0)) !important; }
-  .light .from-void\/80 { --tw-gradient-from: rgba(248, 250, 252, 0.8) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(248, 250, 252, 0)) !important; }
-  .light .from-void\/60 { --tw-gradient-from: rgba(248, 250, 252, 0.6) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(248, 250, 252, 0)) !important; }
-  .light .from-void\/20 { --tw-gradient-from: rgba(248, 250, 252, 0.2) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(248, 250, 252, 0)) !important; }
-  .light .via-void { --tw-gradient-stops: var(--tw-gradient-from), #F8FAFC, var(--tw-gradient-to, rgba(248, 250, 252, 0)) !important; }
-  .light .via-void\/20 { --tw-gradient-stops: var(--tw-gradient-from), rgba(248, 250, 252, 0.2), var(--tw-gradient-to, rgba(248, 250, 252, 0)) !important; }
-  .light .via-void\/10 { --tw-gradient-stops: var(--tw-gradient-from), rgba(248, 250, 252, 0.1), var(--tw-gradient-to, rgba(248, 250, 252, 0)) !important; }
-  .light .via-void\/60 { --tw-gradient-stops: var(--tw-gradient-from), rgba(248, 250, 252, 0.6), var(--tw-gradient-to, rgba(248, 250, 252, 0)) !important; }
-  .light .to-void { --tw-gradient-to: #F8FAFC !important; }
+  .light .from-void { --tw-gradient-from: #E0FFFF !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(224, 255, 255, 0)) !important; }
+  .light .from-void\/80 { --tw-gradient-from: rgba(224, 255, 255, 0.8) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(224, 255, 255, 0)) !important; }
+  .light .from-void\/60 { --tw-gradient-from: rgba(224, 255, 255, 0.6) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(224, 255, 255, 0)) !important; }
+  .light .from-void\/20 { --tw-gradient-from: rgba(224, 255, 255, 0.2) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(224, 255, 255, 0)) !important; }
+  .light .via-void { --tw-gradient-stops: var(--tw-gradient-from), #E0FFFF, var(--tw-gradient-to, rgba(224, 255, 255, 0)) !important; }
+  .light .via-void\/20 { --tw-gradient-stops: var(--tw-gradient-from), rgba(224, 255, 255, 0.2), var(--tw-gradient-to, rgba(224, 255, 255, 0)) !important; }
+  .light .via-void\/10 { --tw-gradient-stops: var(--tw-gradient-from), rgba(224, 255, 255, 0.1), var(--tw-gradient-to, rgba(224, 255, 255, 0)) !important; }
+  .light .via-void\/60 { --tw-gradient-stops: var(--tw-gradient-from), rgba(224, 255, 255, 0.6), var(--tw-gradient-to, rgba(224, 255, 255, 0)) !important; }
+  .light .to-void { --tw-gradient-to: #E0FFFF !important; }
   .light .text-ethereal,
   .light .text-ethereal\/90,
   .light .text-ethereal\/80,
@@ -117,6 +123,14 @@
   .light .text-slate-300,
   .light .text-slate-400 {
     color: #334155 !important;
+  }
+
+  .light .text-xs {
+    font-size: 0.8rem !important;
+  }
+
+  .light .text-sm {
+    font-size: 0.95rem !important;
   }
 
   .light .text-biolume { color: #6D28D9 !important; }

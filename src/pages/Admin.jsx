@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { supabase } from '@/lib/supabase';
 import { useAuth } from '@/lib/AuthContext';
-import { Plus, Edit2, Trash2, X, Check, Image, Package, ChevronDown, AlertCircle, Search, LogOut } from 'lucide-react';
+import { Plus, Edit2, Trash2, X, Check, Image, Package, ChevronDown, AlertCircle, Search, LogOut, Home } from 'lucide-react';
 import { SAMPLE_PRODUCTS } from '@/lib/products-data';
 import Seo from '@/components/seo/Seo';
 
@@ -300,6 +300,15 @@ export default function Admin() {
               <Plus size={15} />
               Add Product
             </motion.button>
+            <motion.a
+              href="/"
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-biolume/10 border border-biolume/30 text-biolume text-sm font-semibold transition-colors hover:bg-biolume/20"
+            >
+              <Home size={15} />
+              Visit Home
+            </motion.a>
             <motion.button
               onClick={logout}
               whileHover={{ scale: 1.04 }}

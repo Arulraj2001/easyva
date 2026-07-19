@@ -119,6 +119,18 @@
     color: #334155 !important;
   }
 
+  .light .text-biolume { color: #6D28D9 !important; }
+  .light .text-biolume\/90 { color: rgba(109, 39, 217, 0.9) !important; }
+  .light .text-biolume\/80 { color: rgba(109, 39, 217, 0.8) !important; }
+  .light .text-biolume\/50 { color: rgba(109, 39, 217, 0.5) !important; }
+  .light .text-biolume\/30 { color: rgba(109, 39, 217, 0.3) !important; }
+  .light .text-biolume\/20 { color: rgba(109, 39, 217, 0.2) !important; }
+  .light .fill-biolume { fill: #6D28D9 !important; }
+  .light .bg-biolume { background-color: #6D28D9 !important; }
+  .light .bg-biolume\/10 { background-color: rgba(109, 39, 217, 0.1) !important; }
+  .light .bg-biolume\/20 { background-color: rgba(109, 39, 217, 0.2) !important; }
+  .light .border-biolume\/20 { border-color: rgba(109, 39, 217, 0.2) !important; }
+  .light .border-biolume\/30 { border-color: rgba(109, 39, 217, 0.3) !important; }
   .light .bg-iris\/10 { background-color: rgba(124, 58, 237, 0.1) !important; }
   .light .bg-biolume\/10 { background-color: rgba(163, 230, 53, 0.1) !important; }
   .light .border-white\/10 { border-color: rgba(15, 23, 42, 0.1) !important; }
@@ -360,8 +372,8 @@
 }
 
 .micro-label {
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
 }

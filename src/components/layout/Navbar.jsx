@@ -59,7 +59,7 @@ export default function Navbar() {
                 const isActive = location.pathname === link.path;
                 return (
                   <Link key={link.path} to={link.path} className="relative group">
-                    <span className={`micro-label transition-colors duration-200 ${
+                    <span className={`text-sm md:text-[15px] font-medium transition-colors duration-200 ${
                       isActive ? 'text-biolume' : 'text-ethereal/60 hover:text-ethereal'
                     }`}>
                       {link.label}
@@ -135,7 +135,7 @@ export default function Navbar() {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`micro-label py-2 border-b border-white/5 transition-colors ${
+                  className={`text-sm md:text-[15px] font-medium py-2 border-b border-white/5 transition-colors ${
                     location.pathname === link.path ? 'text-biolume' : 'text-ethereal/70'
                   }`}
                 >

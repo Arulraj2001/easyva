@@ -2,13 +2,14 @@ import { motion } from 'framer-motion';
 import { MessageCircle, Mail, Phone, Instagram, MapPin, Send } from 'lucide-react';
 import { openWhatsApp } from '@/lib/whatsapp';
 import PageLayout from '@/components/layout/PageLayout';
+import { buildContactStructuredData } from '@/lib/seo';
 
 const contactMethods = [
   {
     icon: MessageCircle,
     title: 'WhatsApp',
     detail: '+91 9342879701',
-    sub: 'Fastest response — typically within minutes',
+    sub: 'Fastest response for order help, tracking and bulk requests',
     action: () => openWhatsApp(),
     btnLabel: 'Open WhatsApp',
     color: 'biolume',
@@ -17,8 +18,8 @@ const contactMethods = [
     icon: Mail,
     title: 'Email',
     detail: 'muruganboutiqueandcosmetics@gmail.com',
-    sub: 'For inquiries and bulk orders',
-    action: () => window.location.href = 'mailto:hello@easyva.in',
+    sub: 'For detailed inquiries, invoices and partnerships',
+    action: () => (window.location.href = 'mailto:muruganboutiqueandcosmetics@gmail.com'),
     btnLabel: 'Send Email',
     color: 'iris',
   },
@@ -27,8 +28,7 @@ const contactMethods = [
     title: '@easyva.3011',
     detail: '@easyva.3011',
     sub: 'Follow for new launches & behind the scenes',
-    action: () =>
-      window.open('https://instagram.com/easyva.3011', '_blank'),
+    action: () => window.open('https://instagram.com/easyva.3011', '_blank'),
     btnLabel: 'Follow Us',
     color: 'iris',
   },
@@ -37,7 +37,7 @@ const contactMethods = [
     title: 'Phone',
     detail: '+91 9342879701',
     sub: 'Mon–Sat, 10:00–18:00 IST',
-    action: () => window.location.href = 'tel:+919342879701',
+    action: () => (window.location.href = 'tel:+919342879701'),
     btnLabel: 'Call Now',
     color: 'biolume',
   },
@@ -53,7 +53,16 @@ export default function Contact() {
   };
 
   return (
-    <PageLayout>
+    <PageLayout
+      seo={{
+        title: 'Contact Easyva | Product Help, Bulk Orders and Support',
+        description:
+          'Contact Easyva on WhatsApp, email or phone for home and kitchen products, home decor, art and craft supplies, embroidery kits, bulk orders and customer support.',
+        keywords: 'contact Easyva, WhatsApp support, bulk orders, home decor support, embroidery kit support',
+        canonicalPath: '/contact',
+        structuredData: buildContactStructuredData(),
+      }}
+    >
       {/* Hero */}
       <div className="relative min-h-[40vh] flex items-end pb-16 pt-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-biolume/5 via-void to-void" />
@@ -65,13 +74,14 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <span className="micro-label text-biolume block mb-2">
-              Get In Touch
-            </span>
+            <span className="micro-label text-biolume block mb-2">Contact & Support</span>
 
             <h1 className="display-xl font-poppins text-ethereal">
-              Let's <span className="gradient-text">Connect.</span>
+              Reach Us for <span className="gradient-text">Orders & Support</span>
             </h1>
+            <p className="text-ethereal/60 mt-3 max-w-2xl">
+              WhatsApp is our fastest channel for product details, order help, embroidery kit questions, decor suggestions and bulk inquiries. We also respond to email and phone during business hours.
+            </p>
           </motion.div>
         </div>
       </div>
@@ -92,29 +102,14 @@ export default function Contact() {
                 transition={{ delay: i * 0.1 }}
                 className="glass rounded-2xl p-6 border border-white/8 hover:border-iris/30 transition-all duration-300 flex flex-col gap-4"
               >
-                <div
-                  className={`w-11 h-11 rounded-xl flex items-center justify-center ${
-                    isLime ? 'bg-biolume/10' : 'bg-iris/10'
-                  }`}
-                >
-                  <Icon
-                    size={20}
-                    className={isLime ? 'text-biolume' : 'text-iris-light'}
-                  />
+                <div className={`w-11 h-11 rounded-xl flex items-center justify-center ${isLime ? 'bg-biolume/10' : 'bg-iris/10'}`}>
+                  <Icon size={20} className={isLime ? 'text-biolume' : 'text-iris-light'} />
                 </div>
 
                 <div>
-                  <p className="font-poppins font-semibold text-ethereal">
-                    {method.title}
-                  </p>
-
-                  <p className="text-sm text-ethereal/70 mt-0.5">
-                    {method.detail}
-                  </p>
-
-                  <p className="text-xs text-ethereal/30 mt-1">
-                    {method.sub}
-                  </p>
+                  <p className="font-poppins font-semibold text-ethereal">{method.title}</p>
+                  <p className="text-sm text-ethereal/70 mt-0.5">{method.detail}</p>
+                  <p className="text-xs text-ethereal/30 mt-1">{method.sub}</p>
                 </div>
 
                 <div className="mt-auto">
@@ -145,49 +140,21 @@ export default function Contact() {
             viewport={{ once: true }}
             className="glass rounded-3xl p-8 border border-white/8"
           >
-            <h2 className="font-poppins font-bold text-2xl text-ethereal mb-2">
-              Send a Message
-            </h2>
+            <h2 className="font-poppins font-bold text-2xl text-ethereal mb-2">Send a Message</h2>
 
-            <p className="text-ethereal/40 text-sm mb-8">
-              This will open WhatsApp with your message pre-filled.
-            </p>
+            <p className="text-ethereal/40 text-sm mb-8">This will open WhatsApp with your message pre-filled.</p>
 
             <form onSubmit={handleSubmit} className="space-y-5">
               {[
-                {
-                  id: 'name',
-                  label: 'Your Name',
-                  type: 'text',
-                  placeholder: 'John Doe',
-                },
-                {
-                  id: 'phone',
-                  label: 'Phone Number',
-                  type: 'tel',
-                  placeholder: '+91 98765 43210',
-                },
-                {
-                  id: 'product',
-                  label: 'Product of Interest',
-                  type: 'text',
-                  placeholder: 'Glass Soap Dispenser',
-                },
+                { id: 'name', label: 'Your Name', type: 'text', placeholder: 'John Doe' },
+                { id: 'phone', label: 'Phone Number', type: 'tel', placeholder: '+91 98765 43210' },
+                { id: 'product', label: 'Product of Interest', type: 'text', placeholder: 'Beginner Floral Embroidery Kit' },
               ].map((field) => (
                 <div key={field.id} className="gradient-border">
                   <div className="glass rounded-xl border border-[#E0FFFF]/60 p-px">
                     <div className="p-3">
-                      <label className="micro-label text-ethereal/40 block mb-2">
-                        {field.label}
-                      </label>
-
-                      <input
-                        id={field.id}
-                        name={field.id}
-                        type={field.type}
-                        placeholder={field.placeholder}
-                        className="w-full rounded-lg border border-[#7C3AED]/70 bg-transparent px-3 py-2 text-ethereal placeholder:text-ethereal/30 focus:outline-none text-sm input-gradient"
-                      />
+                      <label className="micro-label text-ethereal/40 block mb-2">{field.label}</label>
+                      <input id={field.id} name={field.id} type={field.type} placeholder={field.placeholder} className="w-full rounded-lg border border-[#7C3AED]/70 bg-transparent px-3 py-2 text-ethereal placeholder:text-ethereal/30 focus:outline-none text-sm input-gradient" />
                     </div>
                   </div>
                 </div>
@@ -196,28 +163,14 @@ export default function Contact() {
               <div className="gradient-border">
                 <div className="glass rounded-xl border border-[#E0FFFF]/60 p-px">
                   <div className="p-3">
-                    <label className="micro-label text-ethereal/40 block mb-2">
-                      Message
-                    </label>
-
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      placeholder="Tell us about your needs..."
-                      className="w-full rounded-lg border border-[#7C3AED]/70 bg-transparent px-3 py-2 text-ethereal placeholder:text-ethereal/30 focus:outline-none text-sm resize-none input-gradient"
-                    />
+                    <label className="micro-label text-ethereal/40 block mb-2">Message</label>
+                    <textarea id="message" name="message" rows={4} placeholder="Tell us about your needs..." className="w-full rounded-lg border border-[#7C3AED]/70 bg-transparent px-3 py-2 text-ethereal placeholder:text-ethereal/30 focus:outline-none text-sm resize-none input-gradient" />
                   </div>
                 </div>
               </div>
 
               <div className="flex justify-center mt-4">
-                <motion.button
-                  type="submit"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-biolume text-void font-bold text-sm glow-lime"
-                >
+                <motion.button type="submit" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="flex items-center gap-2 px-4 py-2 rounded-xl bg-biolume text-void font-bold text-sm glow-lime">
                   <Send size={14} />
                   Send via WhatsApp
                 </motion.button>
@@ -226,23 +179,12 @@ export default function Contact() {
           </motion.div>
 
           {/* Info */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
+          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-8">
             <div>
-              <h2 className="font-poppins font-bold text-2xl text-ethereal mb-4">
-                Find Us
-              </h2>
+              <h2 className="font-poppins font-bold text-2xl text-ethereal mb-4">Find Us</h2>
 
               <div className="flex items-start gap-3 text-ethereal/60">
-                <MapPin
-                  size={18}
-                  className="text-iris-light mt-0.5 flex-shrink-0"
-                />
-
+                <MapPin size={18} className="text-iris-light mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-ethereal font-medium">India</p>
                   <p className="text-sm mt-1">Shipping across India</p>
@@ -252,50 +194,23 @@ export default function Contact() {
 
             {/* Map */}
             <div className="relative rounded-2xl overflow-hidden h-64 glass border border-white/8">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d18629.805755487785!2d77.0179018490618!3d11.006011823615582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDAwJzMxLjAiTiA3N8KwMDEnMzcuNiJF!5e0!3m2!1sen!2sin!4v1778308782000!5m2!1sen!2sin"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full"
-              ></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d18629.805755487785!2d77.0179018490618!3d11.006011823615582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDAwJzMxLjAiTiA3N8KwMDEnMzcuNiJF!5e0!3m2!1sen!2sin!4v1778308782000!5m2!1sen!2sin" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="w-full h-full"></iframe>
             </div>
 
             <div className="glass rounded-2xl p-6 border border-biolume/20">
-              <h3 className="font-poppins font-semibold text-ethereal mb-3">
-                Business Hours
-              </h3>
-
+              <h3 className="font-poppins font-semibold text-ethereal mb-3">Business Hours</h3>
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-ethereal/40">
-                    Monday – Saturday
-                  </span>
-
-                  <span className="text-biolume">
-                    10:00 – 18:00 IST
-                  </span>
+                  <span className="text-ethereal/40">Monday – Saturday</span>
+                  <span className="text-biolume">10:00 – 18:00 IST</span>
                 </div>
-
                 <div className="flex justify-between">
                   <span className="text-ethereal/40">Sunday</span>
-
-                  <span className="text-ethereal/30">
-                    WhatsApp only
-                  </span>
+                  <span className="text-ethereal/30">WhatsApp only</span>
                 </div>
-
                 <div className="flex justify-between">
-                  <span className="text-ethereal/40">
-                    Response Time
-                  </span>
-
-                  <span className="text-biolume">
-                    Under 2 hours
-                  </span>
+                  <span className="text-ethereal/40">Response Time</span>
+                  <span className="text-biolume">Under 2 hours</span>
                 </div>
               </div>
             </div>

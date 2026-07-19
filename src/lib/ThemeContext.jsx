@@ -4,10 +4,10 @@ const ThemeContext = createContext();
 const STORAGE_KEY = 'easyva-theme';
 
 const getStoredTheme = () => {
-  if (typeof window === 'undefined') return 'dark';
+  if (typeof window === 'undefined') return 'light';
   const stored = window.localStorage.getItem(STORAGE_KEY);
   if (stored === 'dark' || stored === 'light') return stored;
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  return 'light';
 };
 
 const applyTheme = (value) => {
@@ -17,13 +17,14 @@ const applyTheme = (value) => {
 };
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState(() => getStoredTheme());
 
   useEffect(() => {
-    const initialTheme = getStoredTheme();
-    setTheme(initialTheme);
-    applyTheme(initialTheme);
-  }, []);
+    applyTheme(theme);
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem(STORAGE_KEY, theme);
+    }
+  }, [theme]);
 
   const toggleTheme = () => {
     setTheme((current) => {

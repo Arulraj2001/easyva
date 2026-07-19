@@ -1,13 +1,43 @@
 import { motion } from 'framer-motion';
-import { Shield, Palette, Zap, Grid3x3, Droplets, Wrench } from 'lucide-react';
+import { Shield, Palette, Brush, Grid3x3, Leaf, MessageCircle } from 'lucide-react';
 
 const reasons = [
-  { icon: Shield, title: 'Premium Quality', desc: 'Laboratory-grade materials tested to ISO standards. Built to outlast years of daily use.', color: 'iris' },
-  { icon: Palette, title: 'Elegant Design', desc: 'Each product designed with architectural precision — function expressed as art.', color: 'biolume' },
-  { icon: Zap, title: 'Durable Materials', desc: 'Borosilicate glass, aerospace aluminium, and 304 stainless steel. Zero compromise.', color: 'iris' },
-  { icon: Grid3x3, title: 'Modern Organization', desc: 'Modular systems that adapt to your space. Infinitely configurable, permanently elegant.', color: 'biolume' },
-  { icon: Droplets, title: 'Leak Proof', desc: 'Anti-clog silicone valves and precision-engineered seals. Zero mess, every time.', color: 'iris' },
-  { icon: Wrench, title: 'Easy Installation', desc: 'No drilling, no tools, no fuss. Magnetic and adhesive systems install in under 2 minutes.', color: 'biolume' },
+  {
+    icon: Shield,
+    title: 'Practical Home and Kitchen Picks',
+    desc: 'Useful organizers, trays and dispensers selected for daily Indian kitchens and compact home storage.',
+    color: 'iris',
+  },
+  {
+    icon: Palette,
+    title: 'Decor That Feels Personal',
+    desc: 'Vases, wall hangings and trays chosen to add warmth, texture and easy styling to everyday rooms.',
+    color: 'biolume',
+  },
+  {
+    icon: Brush,
+    title: 'Creative Craft Supplies',
+    desc: 'Art and craft products for school projects, handmade gifts, DIY decor and weekend creative time.',
+    color: 'iris',
+  },
+  {
+    icon: Grid3x3,
+    title: 'Complete Embroidery Kits',
+    desc: 'Beginner-friendly kits with hoops, printed fabric, threads, needles and clear stitching guides.',
+    color: 'biolume',
+  },
+  {
+    icon: Leaf,
+    title: 'Easy-Care Materials',
+    desc: 'Products are selected for durability, simple maintenance and long-term usefulness at home.',
+    color: 'iris',
+  },
+  {
+    icon: MessageCircle,
+    title: 'Fast WhatsApp Support',
+    desc: 'Get help with product details, order questions, gifting ideas and bulk inquiries before you buy.',
+    color: 'biolume',
+  },
 ];
 
 export default function WhyEasyva() {
@@ -34,7 +64,7 @@ export default function WhyEasyva() {
             transition={{ delay: 0.1 }}
             className="display-lg font-poppins text-ethereal"
           >
-            Why Choose <span className="gradient-text">Easyva</span>
+            Why Shop <span className="gradient-text">With Easyva</span>
           </motion.h2>
         </div>
 

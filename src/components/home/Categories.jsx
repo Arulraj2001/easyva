@@ -4,28 +4,28 @@ import { ArrowUpRight } from 'lucide-react';
 
 const categories = [
   {
-    name: 'Bathroom Essentials',
-    desc: 'Elevate your daily ritual',
-    image: 'https://res.cloudinary.com/drjdfp7zc/image/upload/f_auto,q_auto/WhatsApp_Image_2026-05-09_at_9.41.15_AM_spcfnc',
-    span: 'col-span-2'
+    name: 'Home and kitchen',
+    desc: 'Kitchen organizers, storage racks, oil dispensers and practical essentials for cleaner counters.',
+    image: 'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=1200&q=80',
+    span: 'col-span-2',
   },
   {
-    name: 'Kitchen Organizers',
-    desc: 'Curated counter culture',
-    image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80',
-    span: 'col-span-1'
+    name: 'Home decor',
+    desc: 'Ceramic vases, wall hangings, trays and decorative accents for warm, styled rooms.',
+    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=1200&q=80',
+    span: 'col-span-1',
   },
   {
-    name: 'Premium Dispensers',
-    desc: 'Form meets function',
-    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80',
-    span: 'col-span-1'
+    name: 'Art and craft',
+    desc: 'Acrylic paints, resin kits, brush pens and DIY craft supplies for creative projects.',
+    image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1200&q=80',
+    span: 'col-span-1',
   },
   {
-    name: 'Magnetic Storage',
-    desc: 'Zero-drill organization',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
-    span: 'col-span-2'
+    name: 'Embroidery kit',
+    desc: 'Complete embroidery kits with hoops, printed fabric, threads, needles and guides.',
+    image: 'https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=1200&q=80',
+    span: 'col-span-2',
   },
 ];
 
@@ -41,7 +41,7 @@ export default function Categories() {
             className="flex items-center justify-center gap-2 mb-4"
           >
             <div className="w-1 h-5 bg-biolume rounded-full" />
-            <span className="micro-label text-biolume">By Category</span>
+            <span className="micro-label text-biolume">Shop By Category</span>
             <div className="w-1 h-5 bg-biolume rounded-full" />
           </motion.div>
           <motion.h2
@@ -51,7 +51,7 @@ export default function Categories() {
             transition={{ delay: 0.1 }}
             className="display-lg font-poppins text-ethereal"
           >
-            Browse the <span className="gradient-text">Collections</span>
+            Find the Right <span className="gradient-text">Easyva Product</span>
           </motion.h2>
         </div>
 
@@ -70,7 +70,7 @@ export default function Categories() {
                 <div className="relative h-44 md:h-56 overflow-hidden">
                   <motion.img
                     src={cat.image}
-                    alt={cat.name}
+                    alt={`${cat.name} products at Easyva`}
                     className="w-full h-full object-cover"
                     whileHover={{ scale: 1.08 }}
                     transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
@@ -78,7 +78,6 @@ export default function Categories() {
                   <div className="absolute inset-0 bg-gradient-to-t from-void/80 via-void/20 to-transparent" />
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-iris/10" />
 
-                  {/* Content */}
                   <div className="absolute bottom-0 left-0 right-0 p-4 flex items-end justify-between">
                     <div>
                       <p className="text-[9px] uppercase tracking-wider text-biolume mb-0.5">{cat.desc}</p>

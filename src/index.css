@@ -156,6 +156,30 @@
       color: #F8FAFC;
     }
 
+    .light .hero-mobile-dark .hero-mobile-image {
+      filter: none;
+      transform: none;
+      opacity: 1;
+    }
+
+    .light .hero-mobile-dark .hero-mobile-overlay {
+      background: transparent !important;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+
+    .light .hero-mobile-dark .hero-mobile-whatsapp,
+    .light .hero-mobile-dark .hero-mobile-whatsapp * {
+      color: #0F172A !important;
+      fill: #0F172A !important;
+    }
+
+    .light .hero-mobile-dark .hero-mobile-whatsapp .hero-mobile-whatsapp-label {
+      color: #0F172A !important;
+      opacity: 1 !important;
+      -webkit-text-fill-color: #0F172A !important;
+    }
+
     .light .hero-mobile-dark .text-ethereal,
     .light .hero-mobile-dark .text-ethereal\/90,
     .light .hero-mobile-dark .text-ethereal\/80,
@@ -208,14 +232,6 @@
       border-color: rgba(124, 58, 237, 0.3) !important;
     }
 
-    .light .hero-mobile-dark .hero-mobile-light-tone,
-    .light .hero-mobile-dark .hero-mobile-light-tone .text-biolume,
-    .light .hero-mobile-dark .hero-mobile-light-tone .text-ethereal {
-      color: #6D28D9 !important;
-      background-color: transparent !important;
-      border-color: rgba(109, 39, 217, 0.3) !important;
-      fill: #6D28D9 !important;
-    }
   }
 
   html.dark [class*="text-iris"] {

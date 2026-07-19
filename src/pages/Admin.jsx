@@ -4,8 +4,9 @@ import { supabase } from '@/lib/supabase';
 import { useAuth } from '@/lib/AuthContext';
 import { Plus, Edit2, Trash2, X, Check, Image, Package, ChevronDown, AlertCircle, Search, LogOut } from 'lucide-react';
 import { SAMPLE_PRODUCTS } from '@/lib/products-data';
+import Seo from '@/components/seo/Seo';
 
-const CATEGORIES = ['Bathroom Essentials', 'Kitchen Organizers', 'Premium Dispensers', 'Magnetic Storage Systems'];
+const CATEGORIES = ['Home and kitchen', 'Home decor', 'Art and craft', 'Embroidery kit'];
 const STOCK_OPTIONS = ['In Stock', 'Limited Stock', 'Out of Stock'];
 
 const emptyForm = {
@@ -13,7 +14,8 @@ const emptyForm = {
   badge: '', short_description: '', full_description: '',
   features: [''], specifications: [{ label: '', value: '' }],
   material: '', dimensions: '', package_contents: '',
-  images: [''], featured: false, stock_status: 'In Stock', sort_order: 0
+  images: [''], featured: false, stock_status: 'In Stock', sort_order: 0,
+  seo_title: '', seo_description: '', seo_keywords: '', seo_image: '',
 };
 
 function slugify(str) {
@@ -49,6 +51,8 @@ function GradientTextarea({ className = '', ...props }) {
 
 export default function Admin() {
   const { logout } = useAuth();
+  const [categoryOptions, setCategoryOptions] = useState(CATEGORIES);
+  const [newCategory, setNewCategory] = useState('');
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
@@ -90,6 +94,9 @@ export default function Admin() {
 
   const openEdit = (p) => {
     setEditing(p.id);
+    setCategoryOptions((current) => (
+      current.includes(p.category) ? current : [...current, p.category]
+    ));
     setForm({
       ...emptyForm, ...p,
       features: p.features?.length ? p.features : [''],
@@ -103,6 +110,7 @@ export default function Admin() {
     if (!form.title || !form.price) return showToast('Title and price are required.', 'error');
     setSaving(true);
     try {
+      const seoDefaults = getSeoDefaults();
       const data = {
         ...form,
         slug: form.slug || slugify(form.title),
@@ -112,6 +120,10 @@ export default function Admin() {
         features: form.features.filter(f => f.trim()),
         specifications: form.specifications.filter(s => s.label.trim()),
         images: form.images.filter(i => i.trim()),
+        seo_title: seoDefaults.seo_title,
+        seo_description: seoDefaults.seo_description,
+        seo_keywords: seoDefaults.seo_keywords,
+        seo_image: seoDefaults.seo_image,
       };
 
       let result;
@@ -168,9 +180,19 @@ export default function Admin() {
   const seedSamples = async () => {
     setSaving(true);
     try {
+      const seededProducts = SAMPLE_PRODUCTS.map((product) => ({
+        ...product,
+        seo_title: product.seo_title || `${product.title} | Easyva`,
+        seo_description:
+          product.seo_description || product.short_description || product.full_description?.slice(0, 160) || '',
+        seo_keywords:
+          product.seo_keywords || [product.title, product.category, 'Easyva', 'home and craft products'].filter(Boolean).join(', '),
+        seo_image: product.seo_image || product.images?.[0] || '',
+      }));
+
       const { error } = await supabase
         .from('products')
-        .insert(SAMPLE_PRODUCTS);
+        .insert(seededProducts);
 
       if (error) throw error;
       showToast('Sample products added!');
@@ -199,8 +221,36 @@ export default function Admin() {
     setForm(f => ({ ...f, specifications: arr }));
   };
 
+  const addCustomCategory = () => {
+    const nextCategory = newCategory.trim();
+    if (!nextCategory) return;
+
+    setCategoryOptions((current) => (
+      current.includes(nextCategory) ? current : [...current, nextCategory]
+    ));
+    setForm((current) => ({ ...current, category: nextCategory }));
+    setNewCategory('');
+  };
+
+  const getSeoDefaults = () => {
+    const descriptionSource = form.seo_description || form.short_description || form.full_description || '';
+
+    return {
+      seo_title: form.seo_title || form.title,
+      seo_description: descriptionSource.slice(0, 160),
+      seo_keywords: form.seo_keywords || [form.title, form.category, 'Easyva', 'home and craft products'].filter(Boolean).join(', '),
+      seo_image: form.seo_image || form.images?.find((image) => image?.trim()) || '',
+    };
+  };
+
   return (
     <div className="min-h-screen bg-void text-ethereal">
+      <Seo
+        title="Admin | Easyva"
+        description="Easyva admin dashboard for managing products and SEO metadata."
+        canonicalPath="/admin"
+        noindex
+      />
       {/* Toast */}
       <AnimatePresence>
         {toast && (
@@ -426,7 +476,7 @@ export default function Admin() {
                       type="text"
                       value={form.title}
                       onChange={e => setForm(f => ({ ...f, title: e.target.value, slug: slugify(e.target.value) }))}
-                      placeholder="Premium Glass Soap Dispenser"
+                      placeholder="Beginner Floral Embroidery Kit"
                     />
                   </FormField>
                   <FormField label="Slug (auto)">
@@ -454,13 +504,33 @@ export default function Admin() {
                     />
                   </FormField>
                   <FormField label="Category">
-                    <select
-                      value={form.category}
-                      onChange={e => setForm(f => ({ ...f, category: e.target.value }))}
-                      className="w-full bg-lustre/50 rounded-xl px-4 py-3 text-sm text-ethereal border border-white/10 focus:border-iris/60 focus:outline-none transition-all duration-300"
-                    >
-                      {CATEGORIES.map(c => <option key={c} value={c}>{c}</option>)}
-                    </select>
+                    <div className="space-y-2">
+                      <div className="flex gap-2">
+                        <select
+                          value={form.category}
+                          onChange={e => setForm(f => ({ ...f, category: e.target.value }))}
+                          className="flex-1 bg-lustre/50 rounded-xl px-4 py-3 text-sm text-ethereal border border-white/10 focus:border-iris/60 focus:outline-none transition-all duration-300"
+                        >
+                          {categoryOptions.map(c => <option key={c} value={c}>{c}</option>)}
+                        </select>
+                        <button
+                          type="button"
+                          onClick={addCustomCategory}
+                          className="w-12 rounded-xl bg-biolume/10 border border-biolume/30 text-biolume font-bold text-lg hover:bg-biolume/20 transition-colors"
+                          aria-label="Add custom category"
+                        >
+                          +
+                        </button>
+                      </div>
+                      <div className="flex gap-2">
+                        <GradientInput
+                          type="text"
+                          value={newCategory}
+                          onChange={e => setNewCategory(e.target.value)}
+                          placeholder="Add new category"
+                        />
+                      </div>
+                    </div>
                   </FormField>
                   <FormField label="Stock Status">
                     <select
@@ -520,6 +590,51 @@ export default function Admin() {
                     placeholder="Detailed product description..."
                   />
                 </FormField>
+
+                <div className="space-y-4 rounded-2xl border border-white/8 bg-white/[0.02] p-5">
+                  <div>
+                    <h3 className="font-poppins font-semibold text-ethereal text-lg">SEO</h3>
+                    <p className="text-xs text-ethereal/40 mt-1">These values will be used for the product page metadata.</p>
+                  </div>
+
+                  <FormField label="SEO Title">
+                    <GradientInput
+                      type="text"
+                      value={form.seo_title}
+                      onChange={e => setForm(f => ({ ...f, seo_title: e.target.value }))}
+                      placeholder="Beginner Floral Embroidery Kit | Easyva"
+                    />
+                  </FormField>
+
+                  <FormField label="SEO Description">
+                    <GradientTextarea
+                      rows={3}
+                      value={form.seo_description}
+                      onChange={e => setForm(f => ({ ...f, seo_description: e.target.value }))}
+                      placeholder="150-160 character description for search results..."
+                    />
+                  </FormField>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <FormField label="SEO Keywords">
+                      <GradientInput
+                        type="text"
+                        value={form.seo_keywords}
+                        onChange={e => setForm(f => ({ ...f, seo_keywords: e.target.value }))}
+                        placeholder="embroidery kit, art and craft supplies, Easyva"
+                      />
+                    </FormField>
+
+                    <FormField label="SEO Image URL">
+                      <GradientInput
+                        type="url"
+                        value={form.seo_image}
+                        onChange={e => setForm(f => ({ ...f, seo_image: e.target.value }))}
+                        placeholder="https://..."
+                      />
+                    </FormField>
+                  </div>
+                </div>
 
                 {/* Material / Dimensions / Package */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

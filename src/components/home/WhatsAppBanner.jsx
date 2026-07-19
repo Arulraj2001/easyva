@@ -31,13 +31,13 @@ export default function WhatsAppBanner() {
               <MessageCircle size={32} className="text-biolume" />
             </motion.div>
 
-            <p className="micro-label text-biolume mb-4">Direct Line Open</p>
+            <p className="micro-label text-biolume mb-4">Questions or Bulk Orders</p>
             <h2 className="display-lg font-poppins text-ethereal mb-4">
-              Need Product Details<br />
-              <span className="gradient-text">or Bulk Orders?</span>
+              Quick Answers for<br />
+              <span className="gradient-text">Home, Decor & Craft Needs</span>
             </h2>
             <p className="body-lg text-ethereal/50 mb-10 max-w-md mx-auto">
-              Get instant responses, exclusive pricing, and personalized recommendations directly from the Easyva team.
+              Chat with us on WhatsApp for product details, assembly help, bulk pricing and curated recommendations for your space or project.
             </p>
 
             <motion.button

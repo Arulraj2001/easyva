@@ -3,36 +3,71 @@ import { Target, Heart, Leaf, Award, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageLayout from '@/components/layout/PageLayout';
 
-const timeline = [
-  { year: '2022', title: 'The Idea', desc: 'Frustrated by the lack of truly premium, thoughtfully designed home essentials in India, the Easyva concept was born in a Bangalore apartment.' },
-  { year: '2023', title: 'First Products', desc: 'After 18 months of material testing and design iteration, the first collection launched: the Glass Soap Dispenser and Magnetic Organizer Rack.' },
-  { year: '2024', title: 'Community Growth', desc: 'Over 500 homes across India transformed. Partnership with independent ceramic artists to expand the bathroom essentials range.' },
-  { year: '2025', title: 'The Full Collection', desc: 'The complete Easyva ecosystem — bathroom, kitchen, and storage — designed as a unified aesthetic language for modern Indian homes.' },
+const values = [
+  {
+    icon: Target,
+    title: 'Useful First',
+    desc: 'Every product should solve a real home, storage or creative need before it earns a place in the collection.',
+  },
+  {
+    icon: Heart,
+    title: 'Made For Daily Life',
+    desc: 'We choose products that are easy to use, easy to gift and easy to return to again and again.',
+  },
+  {
+    icon: Leaf,
+    title: 'Simple Materials',
+    desc: 'Bamboo, ceramic, cotton, glass, steel and reusable craft tools are preferred where they make sense.',
+  },
+  {
+    icon: Award,
+    title: 'Clear Guidance',
+    desc: 'From product details to kit contents, Easyva keeps information practical so customers can buy with confidence.',
+  },
 ];
 
-const values = [
-  { icon: Target, title: 'Precision', desc: 'Every specification, every tolerance — engineered to surpass expectation.' },
-  { icon: Heart, title: 'Passion', desc: 'Born from genuine love for beautiful, functional objects in everyday life.' },
-  { icon: Leaf, title: 'Sustainability', desc: 'Responsibly sourced materials, zero unnecessary packaging.' },
-  { icon: Award, title: 'Excellence', desc: 'We do not launch a product until it exceeds our own standard of perfection.' },
+const categoryNotes = [
+  {
+    title: 'Home and Kitchen',
+    desc: 'Organizers, trays, dispensers and storage products that help Indian kitchens feel cleaner and easier to use.',
+  },
+  {
+    title: 'Home Decor',
+    desc: 'Decorative vases, wall hangings and trays that add warmth to living rooms, bedrooms, balconies and entryways.',
+  },
+  {
+    title: 'Art and Craft',
+    desc: 'Beginner-friendly craft supplies for DIY decor, school work, handmade gifts and weekend creative projects.',
+  },
+  {
+    title: 'Embroidery Kit',
+    desc: 'Complete embroidery kits with hoops, printed fabric, threads, needles and guides for mindful stitching.',
+  },
 ];
 
 export default function About() {
   return (
-    <PageLayout>
-      {/* Hero */}
+    <PageLayout
+      seo={{
+        title: 'About Easyva | Home, Decor, Craft and Embroidery Products',
+        description:
+          'Learn about Easyva, a curated shopping destination for home and kitchen essentials, home decor, art and craft supplies, and embroidery kits in India.',
+        keywords: 'about Easyva, home and kitchen products, home decor, art and craft supplies, embroidery kit India',
+        canonicalPath: '/about',
+      }}
+    >
       <div className="relative min-h-[55vh] flex items-center pt-28 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-iris/10 via-void to-void" />
         <div className="absolute top-10 right-20 w-96 h-96 bg-biolume/5 rounded-full blur-3xl" />
         <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <div>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-              <span className="micro-label text-biolume block mb-4">Our Story</span>
+              <span className="micro-label text-biolume block mb-4">About Easyva</span>
               <h1 className="display-xl font-poppins text-ethereal mb-6">
-                Crafted with <br /><span className="gradient-text">Intention.</span>
+                Curated for <br /><span className="gradient-text">Homes and Makers.</span>
               </h1>
               <p className="body-lg text-ethereal/60 max-w-md leading-relaxed">
-                Easyva was founded on a simple but radical idea: that the objects we interact with every morning and every evening should be as considered as the lives we aspire to live.
+                Easyva brings together useful home and kitchen products, warm home decor, creative art and craft supplies, and complete embroidery kits. Our goal is to make everyday spaces easier to organize and creative hobbies easier to begin.
               </p>
             </motion.div>
           </div>
@@ -44,21 +79,20 @@ export default function About() {
           >
             <div className="relative rounded-3xl overflow-hidden h-80">
               <img
-                src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=90"
-                alt="Easyva products"
+                src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&q=90"
+                alt="Easyva art, craft and home products"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-br from-iris/20 to-transparent" />
             </div>
             <div className="absolute -bottom-4 -left-4 glass rounded-2xl p-4 border border-biolume/20">
-              <p className="font-poppins font-bold text-2xl text-biolume">500+</p>
-              <p className="text-xs text-ethereal/50">Homes transformed</p>
+              <p className="font-poppins font-bold text-2xl text-biolume">4</p>
+              <p className="text-xs text-ethereal/50">Curated categories</p>
             </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Mission */}
       <section className="section-pad">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -67,13 +101,12 @@ export default function About() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-20"
           >
-            <span className="micro-label text-iris-light block mb-4">Mission Statement</span>
+            <span className="micro-label text-iris-light block mb-4">Our Promise</span>
             <blockquote className="font-poppins text-2xl md:text-3xl font-semibold text-ethereal leading-relaxed">
-              "We exist to prove that the mundane can be <span className="gradient-text">magnificent</span> — that every home, regardless of size, deserves objects worth living with."
+              "Easyva helps customers find useful products for better homes, thoughtful gifts and creative time."
             </blockquote>
           </motion.div>
 
-          {/* Values */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((val, i) => {
               const Icon = val.icon;
@@ -98,117 +131,38 @@ export default function About() {
         </div>
       </section>
 
-      {/* Timeline */}
       <section className="section-pad bg-lustre/20">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="micro-label text-biolume block mb-4">Journey</span>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <span className="micro-label text-biolume block mb-4">What We Sell</span>
             <h2 className="display-lg font-poppins text-ethereal">
-              The <span className="gradient-text">Timeline</span>
+              Easyva <span className="gradient-text">Categories</span>
             </h2>
           </div>
-          <div className="relative">
-            <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-iris via-biolume to-transparent" />
-            <div className="space-y-12 pl-16">
-              {timeline.map((item, i) => (
-                <motion.div
-                  key={item.year}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.15 }}
-                  className="relative"
-                >
-                  <div className="absolute -left-[42px] w-4 h-4 rounded-full bg-iris border-2 border-iris/30 shadow-lg shadow-iris/50" />
-                  <span className="micro-label text-iris-light">{item.year}</span>
-                  <h3 className="font-poppins font-semibold text-ethereal text-xl mt-1 mb-2">{item.title}</h3>
-                  <p className="text-ethereal/50 body-lg">{item.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Team */}
-      <section className="section-pad">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="flex items-center justify-center gap-2 mb-4"
-            >
-              <div className="w-1 h-5 bg-iris rounded-full" />
-              <span className="micro-label text-iris-light">The People</span>
-              <div className="w-1 h-5 bg-iris rounded-full" />
-            </motion.div>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="display-lg font-poppins text-ethereal"
-            >
-              Meet the <span className="gradient-text">Team</span>
-            </motion.h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                name: 'Arjun Varma',
-                role: 'Founder & Creative Director',
-                bio: 'Former industrial designer at Philips. Obsessed with the intersection of utility and beauty. Spent 2 years perfecting the Easyva dispenser pump mechanism.',
-                initials: 'AV',
-                color: 'from-iris to-purple-500'
-              },
-              {
-                name: 'Meera Krishnan',
-                role: 'Head of Product Design',
-                bio: 'Ceramic artist turned product designer. Trained at NID Ahmedabad. Every Easyva ceramic piece passes through her quality inspection personally.',
-                initials: 'MK',
-                color: 'from-biolume to-green-500'
-              },
-              {
-                name: 'Rohan Desai',
-                role: 'Operations & Supply Chain',
-                bio: 'Built supply networks across 12 Indian states. Ensures every Easyva product reaches you in pristine condition within 5 days.',
-                initials: 'RD',
-                color: 'from-iris to-blue-500'
-              }
-            ].map((member, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {categoryNotes.map((item, i) => (
               <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 30 }}
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="glass rounded-2xl p-6 border border-white/8 hover:border-iris/30 transition-all duration-300 group text-center"
+                transition={{ delay: i * 0.08 }}
+                className="glass rounded-2xl p-6 border border-white/8"
               >
-                <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${member.color} flex items-center justify-center mx-auto mb-5 shadow-lg`}>
-                  <span className="font-poppins font-bold text-2xl text-void">{member.initials}</span>
-                </div>
-                <h3 className="font-poppins font-semibold text-ethereal text-lg mb-1">{member.name}</h3>
-                <p className="micro-label text-biolume mb-3">{member.role}</p>
-                <p className="text-ethereal/50 text-sm leading-relaxed">{member.bio}</p>
+                <h3 className="font-poppins font-semibold text-ethereal text-xl mb-2">{item.title}</h3>
+                <p className="text-ethereal/50 body-lg">{item.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
       <section className="void-pad">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="display-lg font-poppins text-ethereal mb-6">
-              Ready to <span className="gradient-text">Transform</span> Your Space?
+              Explore the <span className="gradient-text">Easyva Collection</span>
             </h2>
             <Link to="/products">
               <motion.div
@@ -216,7 +170,7 @@ export default function About() {
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-iris to-iris-light text-ethereal font-semibold glow-purple cursor-pointer"
               >
-                Explore the Collection
+                Shop Products
                 <ArrowRight size={18} />
               </motion.div>
             </Link>

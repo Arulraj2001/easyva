@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/lib/AuthContext';
 import { motion } from 'framer-motion';
 import { Mail, Lock } from 'lucide-react';
+import Seo from '@/components/seo/Seo';
 
 export default function LoginForm() {
   const { signIn, authError } = useAuth();
@@ -35,6 +36,12 @@ export default function LoginForm() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-void text-ethereal p-4">
+      <Seo
+        title="Admin Sign In | Easyva"
+        description="Sign in to the Easyva admin dashboard."
+        canonicalPath="/login"
+        noindex
+      />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

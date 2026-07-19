@@ -3,10 +3,10 @@ import { motion, useInView } from 'framer-motion';
 import { Users, Star, Layers, Zap } from 'lucide-react';
 
 const stats = [
-  { icon: Users, value: 500, suffix: '+', label: 'Happy Customers', color: 'text-iris-light' },
-  { icon: Star, value: 100, suffix: '%', label: 'Premium Quality', color: 'text-biolume' },
-  { icon: Layers, value: 15, suffix: '+', label: 'Modern Designs', color: 'text-iris-light' },
-  { icon: Zap, value: 24, suffix: '/7', label: 'Fast Support', color: 'text-biolume' },
+  { icon: Users, value: 500, suffix: '+', label: 'Customer Conversations', color: 'text-iris-light' },
+  { icon: Star, value: 4.9, suffix: '/5', label: 'Customer Rating', color: 'text-biolume' },
+  { icon: Layers, value: 4, suffix: '', label: 'Product Categories', color: 'text-iris-light' },
+  { icon: Zap, value: 2, suffix: 'h', label: 'Typical Reply Time', color: 'text-biolume' },
 ];
 
 function CountUp({ target, suffix, started }) {
@@ -20,8 +20,12 @@ function CountUp({ target, suffix, started }) {
     let current = 0;
     const interval = setInterval(() => {
       current += step;
-      if (current >= target) { setCount(target); clearInterval(interval); }
-      else setCount(Math.floor(current));
+      if (current >= target) {
+        setCount(target);
+        clearInterval(interval);
+      } else {
+        setCount(target % 1 === 0 ? Math.floor(current) : Number(current.toFixed(1)));
+      }
     }, duration / steps);
     return () => clearInterval(interval);
   }, [started, target]);

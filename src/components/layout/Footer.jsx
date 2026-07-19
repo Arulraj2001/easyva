@@ -40,9 +40,9 @@ export default function Footer() {
               </div>
 
               <p className="text-ethereal/50 body-lg max-w-sm">
-                Premium home & lifestyle essentials designed
-                for modern living. Where function meets
-                artistry.
+                Home and kitchen products, home decor, art
+                and craft supplies, and embroidery kits for
+                everyday homes and creative makers.
               </p>
 
               <div className="flex gap-3 mt-6">

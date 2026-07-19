@@ -3,104 +3,97 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Search, MessageCircle } from 'lucide-react';
 import PageLayout from '@/components/layout/PageLayout';
 import { openWhatsApp } from '@/lib/whatsapp';
+import { buildFaqStructuredData } from '@/lib/seo';
 
 const faqCategories = [
   {
-    name: 'Orders & Shipping',
-    icon: '📦',
+    name: 'Orders and Shipping',
+    icon: 'Box',
     questions: [
       {
-        q: 'How long does shipping take?',
-        a: 'We ship across India via premium courier partners. Standard delivery takes 3-7 business days depending on your location. Metro cities typically receive orders within 2-4 days. Express shipping is available at checkout for 1-2 day delivery.'
+        q: 'How long does Easyva delivery take?',
+        a: 'We ship across India through courier partners. Most orders arrive within 3 to 7 business days depending on the delivery location. Metro cities are usually faster than remote pin codes.',
       },
       {
-        q: 'What are the shipping charges?',
-        a: 'Orders above ₹999 qualify for free standard shipping. For orders below ₹999, a flat ₹49 shipping fee applies. Express shipping is available at ₹99 regardless of order value.'
+        q: 'How can I ask about product availability?',
+        a: 'You can message us on WhatsApp with the product name or category. We will confirm availability, pricing, shipping timeline and bulk quantity options if needed.',
       },
       {
-        q: 'Do you ship internationally?',
-        a: 'Currently, we ship exclusively within India. We are exploring international shipping options and will announce availability soon. Follow us on Instagram for updates.'
+        q: 'Do you offer bulk orders for gifting or events?',
+        a: 'Yes. Bulk orders are available for home decor, art and craft supplies, embroidery kits and selected home and kitchen products. Share the quantity and delivery city on WhatsApp for a quote.',
       },
       {
-        q: 'How can I track my order?',
-        a: 'Once your order is dispatched, you will receive a tracking link via WhatsApp and email. You can track your package in real-time through our courier partner\'s portal.'
+        q: 'Can I change my delivery address after ordering?',
+        a: 'Please message us as soon as possible. Address changes can usually be handled before dispatch, but they may not be possible once the courier has picked up the order.',
       },
-      {
-        q: 'Can I change my delivery address after placing an order?',
-        a: 'Address changes can be made within 2 hours of placing the order. Please message us on WhatsApp immediately with your order number and updated address, and we will do our best to accommodate.'
-      }
-    ]
+    ],
   },
   {
-    name: 'Returns & Exchanges',
-    icon: '🔄',
+    name: 'Returns and Support',
+    icon: 'Return',
     questions: [
       {
         q: 'What is your return policy?',
-        a: 'We offer a 7-day return window from the date of delivery. Products must be unused, in original packaging, and in resalable condition. Custom or personalized items are non-returnable.'
+        a: 'Returns are accepted within 7 days of delivery for unused products in original packaging. Items that are damaged through use, missing parts or altered after delivery may not be eligible.',
       },
       {
-        q: 'How do I initiate a return?',
-        a: 'Simply message us on WhatsApp with your order number and reason for return. Our team will guide you through the process and arrange a pickup within 48 hours.'
+        q: 'What should I do if an item arrives damaged?',
+        a: 'Send clear photos or a short video on WhatsApp within 24 hours of delivery. Our team will review the issue and help with a replacement, return or suitable resolution.',
       },
       {
-        q: 'Who pays for return shipping?',
-        a: 'If the return is due to a defect, damage, or error on our part, we cover the return shipping costs. For change-of-mind returns, a ₹99 restocking fee is deducted from the refund.'
+        q: 'Are embroidery kits and craft kits returnable?',
+        a: 'Unopened kits can usually be returned within the return window. Opened kits with used threads, paints, resin, fabric or tools may not be returnable for hygiene and completeness reasons.',
       },
       {
-        q: 'How long do refunds take?',
-        a: 'Once we receive and inspect the returned item, refunds are processed within 3-5 business days. The amount will be credited to your original payment method.'
+        q: 'How do refunds work?',
+        a: 'After the returned item is received and checked, eligible refunds are processed to the original payment method or as agreed with support.',
       },
-      {
-        q: 'Can I exchange a product?',
-        a: 'Yes, exchanges are available within the 7-day window. We recommend messaging us on WhatsApp to check stock availability before initiating an exchange request.'
-      }
-    ]
+    ],
   },
   {
     name: 'Product Care',
-    icon: '🧼',
+    icon: 'Care',
     questions: [
       {
-        q: 'How do I clean the Glass Soap Dispenser?',
-        a: 'The borosilicate glass body can be cleaned with warm water and mild soap. Avoid abrasive scrubbers. The pump mechanism can be disassembled for thorough cleaning — simply unscrew the pump head and rinse under running water.'
+        q: 'How do I care for home and kitchen organizers?',
+        a: 'Wipe organizers, racks and trays with a soft damp cloth and dry them immediately. Avoid soaking bamboo or wood products, and keep metal parts away from harsh cleaners.',
       },
       {
-        q: 'Are your products dishwasher safe?',
-        a: 'Ceramic and bamboo components are dishwasher safe on a gentle cycle. However, we recommend hand washing to preserve the finish. Aluminum and stainless steel parts should be wiped clean with a damp cloth.'
+        q: 'How should I clean home decor products?',
+        a: 'Use a dry or slightly damp cloth for ceramic vases, decorative trays and wall decor. Keep macrame and fabric decor away from direct moisture and dust gently when needed.',
       },
       {
-        q: 'How do I maintain the bamboo products?',
-        a: 'Bamboo products are finished with natural oil. To maintain their appearance, wipe with a slightly damp cloth and dry immediately. Avoid prolonged soaking. Apply food-safe mineral oil every 3-4 months to replenish the finish.'
+        q: 'Are art and craft supplies beginner friendly?',
+        a: 'Yes. Easyva art and craft supplies are selected for beginners, students and hobby makers. Product pages mention recommended uses, surfaces and safety notes where relevant.',
       },
       {
-        q: 'Will the magnetic organizers damage my walls?',
-        a: 'No. Our magnetic systems use N52 neodymium magnets that attach to metal surfaces without any adhesive or drilling. For non-metal surfaces, our adhesive systems use 3M VHB tape that removes cleanly with a heat gun, leaving no residue.'
-      }
-    ]
+        q: 'What is included in an embroidery kit?',
+        a: 'Most Easyva embroidery kits include printed fabric, an embroidery hoop, colored threads, needles and a guide. Check each product page for exact contents and hoop size.',
+      },
+    ],
   },
   {
-    name: 'Product & Order Info',
-    icon: '❓',
+    name: 'Product Help',
+    icon: 'Help',
     questions: [
       {
-        q: 'Are your products BPA-free?',
-        a: 'Yes, all Easyva products are 100% BPA-free. We use food-grade materials throughout — borosilicate glass, 304 stainless steel, food-safe ABS polymer, and natural bamboo. Every material is selected for safety and durability.'
+        q: 'Which category should I choose for gifting?',
+        a: 'Home decor and embroidery kits are popular for thoughtful gifts. Art and craft supplies work well for students and hobby makers, while home and kitchen products are useful for housewarming gifts.',
       },
       {
-        q: 'Do you offer bulk or wholesale orders?',
-        a: 'Yes, we offer special pricing for bulk orders, corporate gifting, and hospitality partnerships. Please reach out to us on WhatsApp with your requirements, and our team will prepare a customized quote.'
+        q: 'Can you recommend products for a small kitchen?',
+        a: 'Yes. Message us on WhatsApp with a photo or description of your counter, drawer or shelf space. We can suggest storage racks, cutlery trays, dispensers and organizers.',
       },
       {
-        q: 'Can I get a product sample before ordering in bulk?',
-        a: 'Absolutely. For bulk inquiries, we can arrange product samples at a nominal cost, which is fully adjustable against your first bulk order. Contact us on WhatsApp for details.'
+        q: 'Are product images exact?',
+        a: 'Images are used to represent the product style and use case. Natural materials, handmade-look finishes and lighting may create small variations in color or texture.',
       },
       {
-        q: 'Is gift wrapping available?',
-        a: 'All Easyva products come in premium gift-ready packaging. For an additional ₹99, we offer special gift wrapping with a handwritten note card. Select the gift wrap option at checkout.'
-      }
-    ]
-  }
+        q: 'How do I contact Easyva quickly?',
+        a: 'WhatsApp is the fastest way to reach us for product details, order help, gifting suggestions and bulk inquiries.',
+      },
+    ],
+  },
 ];
 
 export default function FAQ() {
@@ -108,61 +101,55 @@ export default function FAQ() {
   const [activeCategory, setActiveCategory] = useState(faqCategories[0].name);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const toggleQuestion = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
-  const currentCategory = faqCategories.find(c => c.name === activeCategory);
+  const currentCategory = faqCategories.find((category) => category.name === activeCategory);
   const filteredQuestions = currentCategory?.questions.filter(
-    item => !searchQuery || item.q.toLowerCase().includes(searchQuery.toLowerCase()) || item.a.toLowerCase().includes(searchQuery.toLowerCase())
+    (item) =>
+      !searchQuery ||
+      item.q.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.a.toLowerCase().includes(searchQuery.toLowerCase()),
   ) || [];
 
   return (
-    <PageLayout>
-      {/* Hero */}
+    <PageLayout
+      seo={{
+        title: 'Easyva FAQ | Shipping, Returns, Product Care and Embroidery Kits',
+        description:
+          'Find answers about Easyva shipping, returns, product care, home and kitchen products, home decor, art and craft supplies, and embroidery kits.',
+        keywords: 'Easyva FAQ, shipping, returns, product care, embroidery kit questions, art and craft supplies',
+        canonicalPath: '/faq',
+        structuredData: buildFaqStructuredData(faqCategories.flatMap((category) => category.questions)),
+      }}
+    >
       <div className="relative min-h-[35vh] flex items-end pb-16 pt-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-iris/5 via-void to-void" />
         <div className="absolute top-20 right-20 w-80 h-80 bg-biolume/5 rounded-full blur-3xl" />
         <div className="relative max-w-7xl mx-auto px-6 w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <span className="micro-label text-biolume">Help Center</span>
             <h1 className="display-xl font-poppins text-ethereal mt-2">
               Frequently Asked <span className="gradient-text">Questions</span>
             </h1>
           </motion.div>
+          <p className="text-ethereal/60 mt-4 max-w-3xl">
+            Answers about Easyva delivery, returns, product care, craft kit contents and WhatsApp support.
+          </p>
         </div>
       </div>
 
       <div className="max-w-4xl mx-auto px-6 pb-24">
-        {/* Search */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="relative mb-10"
-        >
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="relative mb-10">
           <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-ethereal/30" />
           <input
             type="text"
-            placeholder="Search questions..."
+            placeholder="Search shipping, returns, decor, craft or embroidery..."
             value={searchQuery}
-            onChange={e => setSearchQuery(e.target.value)}
+            onChange={(event) => setSearchQuery(event.target.value)}
             className="w-full pl-11 pr-4 py-3.5 glass rounded-xl border border-white/10 text-ethereal placeholder:text-ethereal/30 focus:outline-none focus:border-iris/50 transition-colors bg-transparent text-sm"
           />
         </motion.div>
 
-        {/* Category Tabs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="flex flex-wrap gap-2 mb-10"
-        >
-          {faqCategories.map(cat => (
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="flex flex-wrap gap-2 mb-10">
+          {faqCategories.map((cat) => (
             <motion.button
               key={cat.name}
               onClick={() => { setActiveCategory(cat.name); setOpenIndex(null); }}
@@ -179,17 +166,9 @@ export default function FAQ() {
           ))}
         </motion.div>
 
-        {/* Questions */}
-        <motion.div
-          key={activeCategory}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-          className="space-y-3"
-        >
+        <motion.div key={activeCategory} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} className="space-y-3">
           {filteredQuestions.length === 0 ? (
             <div className="text-center py-16">
-              <p className="text-4xl mb-4">🔍</p>
               <p className="text-ethereal/50">No questions found matching your search.</p>
               <button onClick={() => setSearchQuery('')} className="mt-3 text-iris-light micro-label hover:text-biolume transition-colors">
                 Clear search
@@ -198,24 +177,15 @@ export default function FAQ() {
           ) : (
             filteredQuestions.map((item, i) => (
               <motion.div
-                key={i}
+                key={item.q}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
                 className="glass rounded-2xl border border-white/8 overflow-hidden"
               >
-                <button
-                  onClick={() => toggleQuestion(i)}
-                  className="w-full flex items-center justify-between p-5 text-left hover:bg-white/[0.02] transition-colors"
-                >
-                  <span className="font-poppins font-medium text-ethereal text-sm pr-4">
-                    {item.q}
-                  </span>
-                  <motion.div
-                    animate={{ rotate: openIndex === i ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="flex-shrink-0"
-                  >
+                <button onClick={() => setOpenIndex(openIndex === i ? null : i)} className="w-full flex items-center justify-between p-5 text-left hover:bg-white/[0.02] transition-colors">
+                  <span className="font-poppins font-medium text-ethereal text-sm pr-4">{item.q}</span>
+                  <motion.div animate={{ rotate: openIndex === i ? 180 : 0 }} transition={{ duration: 0.3 }} className="flex-shrink-0">
                     <ChevronDown size={16} className="text-ethereal/30" />
                   </motion.div>
                 </button>
@@ -230,9 +200,7 @@ export default function FAQ() {
                     >
                       <div className="px-5 pb-5 pt-0">
                         <div className="w-full h-px bg-white/5 mb-4" />
-                        <p className="text-ethereal/60 text-sm leading-relaxed">
-                          {item.a}
-                        </p>
+                        <p className="text-ethereal/60 text-sm leading-relaxed">{item.a}</p>
                       </div>
                     </motion.div>
                   )}
@@ -242,21 +210,13 @@ export default function FAQ() {
           )}
         </motion.div>
 
-        {/* Still have questions */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-16 glass rounded-3xl p-8 md:p-12 text-center border border-biolume/20"
-        >
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-16 glass rounded-3xl p-8 md:p-12 text-center border border-biolume/20">
           <div className="w-16 h-16 rounded-full bg-biolume/10 border border-biolume/30 flex items-center justify-center mx-auto mb-4">
             <MessageCircle size={28} className="text-biolume" />
           </div>
-          <h2 className="font-poppins font-bold text-2xl text-ethereal mb-3">
-            Still have questions?
-          </h2>
+          <h2 className="font-poppins font-bold text-2xl text-ethereal mb-3">Still have questions?</h2>
           <p className="text-ethereal/50 body-lg mb-6 max-w-md mx-auto">
-            Our team typically responds within minutes. We're here to help with anything you need.
+            Message us for product recommendations, order help, bulk pricing or craft kit details.
           </p>
           <motion.button
             onClick={() => openWhatsApp()}

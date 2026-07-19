@@ -1,4 +1,5 @@
-import { useRef, useEffect, useState } from 'react';
+// @ts-nocheck
+import { useRef, useEffect } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, MessageCircle, Sparkles } from 'lucide-react';
@@ -34,45 +35,48 @@ export default function HeroSection() {
   const springY = useSpring(mouseY, { stiffness: 30, damping: 20 });
 
   useEffect(() => {
-    const onMove = (e) => {
+    const onMove = (event) => {
       if (!heroRef.current) return;
       const rect = heroRef.current.getBoundingClientRect();
       const cx = rect.width / 2;
       const cy = rect.height / 2;
-      mouseX.set(((e.clientX - rect.left - cx) / cx) * 15);
-      mouseY.set(((e.clientY - rect.top - cy) / cy) * 10);
+      mouseX.set(((event.clientX - rect.left - cx) / cx) * 15);
+      mouseY.set(((event.clientY - rect.top - cy) / cy) * 10);
     };
     const el = heroRef.current;
     el?.addEventListener('mousemove', onMove);
     return () => el?.removeEventListener('mousemove', onMove);
-  }, []);
+  }, [mouseX, mouseY]);
 
-  const particles = Array.from({ length: 20 }, (_, i) => ({
-    x: `${Math.random() * 100}%`, y: `${Math.random() * 100}%`, delay: Math.random() * 4
+  const particles = Array.from({ length: 20 }, () => ({
+    x: `${Math.random() * 100}%`,
+    y: `${Math.random() * 100}%`,
+    delay: Math.random() * 4,
   }));
 
   return (
     <section ref={heroRef} className="hero-mobile-dark relative min-h-screen flex items-center overflow-hidden bg-void">
       <div
-        className="absolute inset-0 md:hidden bg-center bg-cover"
+        className="hero-mobile-image absolute inset-0 md:hidden bg-center bg-cover"
         style={{ backgroundImage: "url('https://res.cloudinary.com/dk8odjbsk/image/upload/v1784452492/easyva_bg_oig26y.jpg')" }}
       />
-      <div className="absolute inset-0 md:hidden bg-gradient-to-br from-void/90 via-void/75 to-void/90" />
+      <div className="hero-mobile-overlay absolute inset-0 md:hidden bg-gradient-to-br from-void/90 via-void/75 to-void/90" />
 
-      {/* Background blobs */}
       <FloatingBlob x="10%" y="20%" size={500} color="#7C3AED" delay={0} />
       <FloatingBlob x="60%" y="60%" size={400} color="#A3E635" delay={2} />
       <FloatingBlob x="70%" y="10%" size={300} color="#6D28D9" delay={4} />
 
-      {/* Particles */}
-      {particles.map((p, i) => <AnimatedParticle key={i} {...p} />)}
+      {particles.map((particle, index) => <AnimatedParticle key={index} {...particle} />)}
 
-      {/* Grid overlay */}
-      <div className="absolute inset-0 opacity-[0.03]"
-        style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
 
       <div className="relative max-w-7xl mx-auto px-6 py-32 grid md:grid-cols-2 gap-16 items-center">
-        {/* Left — Headline */}
         <div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -81,7 +85,7 @@ export default function HeroSection() {
             className="flex items-center gap-2 mb-6"
           >
             <div className="w-1 h-6 bg-biolume rounded-full" />
-            <span className="micro-label text-biolume hero-mobile-light-tone">Premium Home Essentials</span>
+            <span className="micro-label text-white">Home and kitchen | Home decor | Art and craft | Embroidery kit</span>
           </motion.div>
 
           <motion.h1
@@ -90,8 +94,9 @@ export default function HeroSection() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="display-xl font-poppins text-ethereal mb-6"
           >
-            Refining <br />
-            <span className="gradient-text">the Routine.</span>
+            Style Your Home.
+            <br />
+            <span className="gradient-text">Create with Joy.</span>
           </motion.h1>
 
           <motion.p
@@ -100,7 +105,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.45 }}
             className="body-lg text-ethereal/60 mb-10 max-w-md"
           >
-            Premium home essentials designed for modern living. Where architectural function meets sculptural form.
+            Shop home essentials, decor accents, craft supplies and embroidery kits curated for everyday living and thoughtful gifting.
           </motion.p>
 
           <motion.div
@@ -116,7 +121,7 @@ export default function HeroSection() {
                 className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-iris to-iris-light text-ethereal font-semibold glow-purple cursor-pointer"
               >
                 <Sparkles size={16} />
-                Explore the Collection
+                Shop Products
                 <ArrowRight size={16} />
               </motion.div>
             </Link>
@@ -124,14 +129,13 @@ export default function HeroSection() {
               onClick={() => openWhatsApp()}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
-              className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-biolume text-white font-semibold transition-colors hero-mobile-light-tone"
+              className="hero-mobile-whatsapp flex items-center gap-2 px-6 py-3.5 rounded-xl bg-biolume text-black font-semibold transition-colors"
             >
               <MessageCircle size={16} />
-              WhatsApp Us
+              <span className="hero-mobile-whatsapp-label">Ask on WhatsApp</span>
             </motion.button>
           </motion.div>
 
-          {/* Stats row */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -139,19 +143,18 @@ export default function HeroSection() {
             className="flex gap-8 mt-12"
           >
             {[
-              { n: '500+', l: 'Happy Customers' },
-              { n: '15+', l: 'Premium Products' },
-              { n: '4.9★', l: 'Average Rating' },
-            ].map(s => (
-              <div key={s.l}>
-                <p className="font-poppins font-bold text-2xl text-ethereal">{s.n}</p>
-                <p className="text-ethereal/40 text-xs">{s.l}</p>
+              { n: '4', l: 'Core Categories' },
+              { n: '12+', l: 'Curated Products' },
+              { n: 'India', l: 'Delivery Support' },
+            ].map((stat) => (
+              <div key={stat.l}>
+                <p className="font-poppins font-bold text-2xl text-ethereal">{stat.n}</p>
+                <p className="text-ethereal/40 text-xs">{stat.l}</p>
               </div>
             ))}
           </motion.div>
         </div>
 
-        {/* Right — Floating product cards */}
         <div className="relative h-[500px] hidden md:block">
           <motion.div
             style={{ rotateY: springX, rotateX: springY }}
@@ -159,7 +162,6 @@ export default function HeroSection() {
             animate={{ y: [0, -15, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
           >
-            {/* Main card */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -168,19 +170,18 @@ export default function HeroSection() {
             >
               <img
                 src="https://res.cloudinary.com/dk8odjbsk/image/upload/v1784452492/easyva_bg_oig26y.jpg"
-                alt="Premium Glass Soap Dispenser"
+                alt="Easyva home, decor and craft products"
                 className="w-full h-72 object-cover"
               />
               <div className="p-4 flex justify-between items-center">
                 <div>
-                  <p className="micro-label text-iris-light mb-0.5">Creative Moments</p>
-                  <p className="font-poppins font-semibold text-ethereal">Family Art Set</p>
+                  <p className="micro-label text-iris-light mb-0.5">Featured Category</p>
+                  <p className="font-poppins font-semibold text-ethereal">Embroidery Starter Kits</p>
                 </div>
-                <span className="font-bold text-biolume text-lg">₹1,299</span>
+                <span className="font-bold text-biolume text-lg">From Rs. 649</span>
               </div>
             </motion.div>
 
-            {/* Float card small */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0, y: [0, -10, 0] }}
@@ -190,24 +191,22 @@ export default function HeroSection() {
               <div className="w-8 h-8 rounded-lg bg-biolume/20 flex items-center justify-center mb-2">
                 <Sparkles size={14} className="text-biolume" />
               </div>
-              <p className="text-xs text-ethereal/60">Premium Quality</p>
-              <p className="text-sm font-semibold text-ethereal">Certified</p>
+              <p className="text-xs text-ethereal/60">Popular Searches</p>
+              <p className="text-sm font-semibold text-ethereal">Craft Kits</p>
             </motion.div>
 
-            {/* Floating category pill */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: [-5, 5, -5] }}
               transition={{ duration: 0.6, delay: 0.8, y: { duration: 3, repeat: Infinity, ease: 'easeInOut' } }}
               className="absolute top-0 right-0 glass rounded-xl px-3 py-1.5 border border-white/10"
             >
-              <span className="micro-label gradient-text">New Collection</span>
+              <span className="micro-label gradient-text">New Easyva Collection</span>
             </motion.div>
           </motion.div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}

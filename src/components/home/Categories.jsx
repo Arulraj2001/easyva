@@ -33,7 +33,7 @@ export default function Categories() {
   return (
     <section className="section-pad">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-10">
+        <div className="text-center mb-7">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -67,7 +67,7 @@ export default function Categories() {
               data-cursor="product"
             >
               <Link to={`/products?category=${encodeURIComponent(cat.name)}`}>
-                <div className="relative h-44 md:h-56 overflow-hidden">
+                <div className="relative h-36 md:h-44 overflow-hidden">
                   <motion.img
                     src={cat.image}
                     alt={`${cat.name} products at Easyva`}

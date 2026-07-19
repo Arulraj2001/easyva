@@ -126,7 +126,7 @@ export default function Products() {
         canonicalPath: '/products',
       }}
     >
-      <div className="relative min-h-[40vh] flex items-end pb-16 pt-32 overflow-hidden">
+      <div className="relative min-h-[30vh] flex items-end pb-10 pt-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-iris/10 via-void to-void" />
         <div className="absolute top-20 left-10 w-80 h-80 bg-iris/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-10 w-60 h-60 bg-biolume/5 rounded-full blur-3xl" />
@@ -142,7 +142,7 @@ export default function Products() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 pb-24">
+      <div className="max-w-7xl mx-auto px-6 pb-14">
         <div className="flex flex-col md:flex-row gap-4 mb-10">
           <div className="relative flex-1">
             <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-ethereal/30" />

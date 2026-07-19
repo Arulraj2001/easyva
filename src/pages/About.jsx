@@ -56,7 +56,7 @@ export default function About() {
         canonicalPath: '/about',
       }}
     >
-      <div className="relative min-h-[55vh] flex items-center pt-28 pb-16 overflow-hidden">
+      <div className="relative min-h-[38vh] flex items-center pt-24 pb-10 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-iris/10 via-void to-void" />
         <div className="absolute top-10 right-20 w-96 h-96 bg-biolume/5 rounded-full blur-3xl" />
         <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
@@ -99,7 +99,7 @@ export default function About() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-3xl mx-auto text-center mb-20"
+            className="max-w-3xl mx-auto text-center mb-12"
           >
             <span className="micro-label text-iris-light block mb-4">Our Promise</span>
             <blockquote className="font-poppins text-2xl md:text-3xl font-semibold text-ethereal leading-relaxed">
@@ -133,7 +133,7 @@ export default function About() {
 
       <section className="section-pad bg-lustre/20">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <span className="micro-label text-biolume block mb-4">What We Sell</span>
             <h2 className="display-lg font-poppins text-ethereal">
               Easyva <span className="gradient-text">Categories</span>

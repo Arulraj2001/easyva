@@ -22,8 +22,8 @@ export default function Footer() {
         {/* Background glow */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-40 bg-iris/10 rounded-full blur-3xl" />
 
-        <div className="relative max-w-7xl mx-auto px-6 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="relative max-w-7xl mx-auto px-6 py-10">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             {/* Brand */}
             <div className="md:col-span-2">
               <div className="flex items-center gap-2 mb-4">
@@ -141,7 +141,7 @@ export default function Footer() {
           </div>
 
           {/* Bottom bar */}
-          <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="pt-5 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Left */}
             <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
               <p className="text-ethereal/30 text-sm">

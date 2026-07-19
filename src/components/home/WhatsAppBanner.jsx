@@ -11,7 +11,7 @@ export default function WhatsAppBanner() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="relative rounded-3xl overflow-hidden p-12 md:p-16 text-center whatsapp-banner"
+          className="relative rounded-3xl overflow-hidden p-8 md:p-10 text-center whatsapp-banner"
         >
           {/* Glowing orbs */}
           <div className="absolute top-0 left-1/4 w-64 h-64 bg-iris/20 rounded-full blur-3xl animate-pulse" />
@@ -26,17 +26,17 @@ export default function WhatsAppBanner() {
             <motion.div
               animate={{ scale: [1, 1.1, 1] }}
               transition={{ duration: 3, repeat: Infinity }}
-              className="w-20 h-20 rounded-full bg-biolume/10 border border-biolume/30 flex items-center justify-center mx-auto mb-6"
+              className="w-14 h-14 rounded-full bg-biolume/10 border border-biolume/30 flex items-center justify-center mx-auto mb-4"
             >
-              <MessageCircle size={32} className="text-biolume" />
+              <MessageCircle size={24} className="text-biolume" />
             </motion.div>
 
-            <p className="micro-label text-biolume mb-4">Questions or Bulk Orders</p>
+            <p className="micro-label text-biolume mb-3">Questions or Bulk Orders</p>
             <h2 className="display-lg font-poppins text-ethereal mb-4">
               Quick Answers for<br />
               <span className="gradient-text">Home, Decor & Craft Needs</span>
             </h2>
-            <p className="body-lg text-ethereal/50 mb-10 max-w-md mx-auto">
+            <p className="body-lg text-ethereal/50 mb-6 max-w-md mx-auto">
               Chat with us on WhatsApp for product details, assembly help, bulk pricing and curated recommendations for your space or project.
             </p>
 

@@ -64,7 +64,7 @@ export default function Contact() {
       }}
     >
       {/* Hero */}
-      <div className="relative min-h-[40vh] flex items-end pb-16 pt-32 overflow-hidden">
+      <div className="relative min-h-[30vh] flex items-end pb-10 pt-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-biolume/5 via-void to-void" />
         <div className="absolute top-20 left-20 w-80 h-80 bg-iris/10 rounded-full blur-3xl" />
 
@@ -86,9 +86,9 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 pb-24">
+      <div className="max-w-7xl mx-auto px-6 pb-14">
         {/* Contact Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
           {contactMethods.map((method, i) => {
             const Icon = method.icon;
             const isLime = method.color === 'biolume';
@@ -138,7 +138,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="glass rounded-3xl p-8 border border-white/8"
+          className="glass rounded-3xl p-6 border border-white/8"
           >
             <h2 className="font-poppins font-bold text-2xl text-ethereal mb-2">Send a Message</h2>
 

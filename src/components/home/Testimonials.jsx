@@ -53,7 +53,7 @@ export default function Testimonials() {
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-iris/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-10">
+        <div className="text-center mb-7">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

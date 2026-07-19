@@ -29,7 +29,7 @@ export default function ProductCard({ product, index = 0 }) {
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10 shimmer overflow-hidden rounded-xl" />
 
         {/* Image */}
-        <div className="relative overflow-hidden h-48 bg-lustre">
+        <div className="relative overflow-hidden h-40 bg-lustre">
           {/* Loading skeleton */}
           {!imageLoaded && (
             <div className="absolute inset-0 bg-lustre/50 animate-pulse" />
@@ -69,7 +69,7 @@ export default function ProductCard({ product, index = 0 }) {
         </div>
 
         {/* Content */}
-        <div className="p-4">
+        <div className="p-3">
           <div className="flex items-start justify-between gap-2 mb-1.5">
             <div>
               <p className="text-[10px] uppercase tracking-wider text-iris-light mb-0.5">{product.category}</p>
@@ -79,12 +79,12 @@ export default function ProductCard({ product, index = 0 }) {
             </div>
           </div>
 
-          <p className="text-ethereal/50 text-xs leading-relaxed mb-3 line-clamp-2">
+          <p className="text-ethereal/50 text-xs leading-relaxed mb-2 line-clamp-2">
             {product.short_description}
           </p>
 
           {/* Price */}
-          <div className="flex items-center gap-2 mb-3">
+          <div className="flex items-center gap-2 mb-2">
             <span className="font-poppins font-bold text-base text-ethereal">
               ₹{product.price?.toLocaleString('en-IN')}
             </span>

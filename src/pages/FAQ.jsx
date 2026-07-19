@@ -120,7 +120,7 @@ export default function FAQ() {
         structuredData: buildFaqStructuredData(faqCategories.flatMap((category) => category.questions)),
       }}
     >
-      <div className="relative min-h-[35vh] flex items-end pb-16 pt-32 overflow-hidden">
+      <div className="relative min-h-[28vh] flex items-end pb-10 pt-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-iris/5 via-void to-void" />
         <div className="absolute top-20 right-20 w-80 h-80 bg-biolume/5 rounded-full blur-3xl" />
         <div className="relative max-w-7xl mx-auto px-6 w-full">
@@ -136,8 +136,8 @@ export default function FAQ() {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 pb-24">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="relative mb-10">
+      <div className="max-w-4xl mx-auto px-6 pb-14">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="relative mb-6">
           <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-ethereal/30" />
           <input
             type="text"
@@ -148,7 +148,7 @@ export default function FAQ() {
           />
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="flex flex-wrap gap-2 mb-10">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="flex flex-wrap gap-2 mb-6">
           {faqCategories.map((cat) => (
             <motion.button
               key={cat.name}
@@ -210,7 +210,7 @@ export default function FAQ() {
           )}
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-16 glass rounded-3xl p-8 md:p-12 text-center border border-biolume/20">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-10 glass rounded-3xl p-6 md:p-8 text-center border border-biolume/20">
           <div className="w-16 h-16 rounded-full bg-biolume/10 border border-biolume/30 flex items-center justify-center mx-auto mb-4">
             <MessageCircle size={28} className="text-biolume" />
           </div>

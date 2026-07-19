@@ -506,14 +506,14 @@
 
 /* Section padding */
 .section-pad {
-  padding-top: clamp(48px, 8vw, 100px);
-  padding-bottom: clamp(48px, 8vw, 100px);
+  padding-top: clamp(28px, 5vw, 64px);
+  padding-bottom: clamp(28px, 5vw, 64px);
 }
 
 /* Voidal breathing */
 .void-pad {
-  padding-top: clamp(40px, 6vw, 80px);
-  padding-bottom: clamp(40px, 6vw, 80px);
+  padding-top: clamp(24px, 4vw, 52px);
+  padding-bottom: clamp(24px, 4vw, 52px);
 }
 
 /* Typography scale */

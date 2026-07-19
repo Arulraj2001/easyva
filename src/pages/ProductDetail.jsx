@@ -88,7 +88,7 @@ export default function ProductDetail() {
   return (
     <PageLayout productName={product.title} seo={seo}>
       {/* Breadcrumb */}
-      <div className="pt-28 pb-6 max-w-7xl mx-auto px-6">
+      <div className="pt-24 pb-4 max-w-7xl mx-auto px-6">
         <div className="flex items-center gap-2 text-ethereal/30 text-sm">
           <Link to="/" className="hover:text-ethereal transition-colors">Home</Link>
           <ChevronRight size={12} />
@@ -99,13 +99,13 @@ export default function ProductDetail() {
       </div>
 
       {/* Main Layout */}
-      <div className="max-w-7xl mx-auto px-6 pb-24">
+      <div className="max-w-7xl mx-auto px-6 pb-14">
         <div className="grid md:grid-cols-5 gap-12 items-start">
           {/* Left — Gallery (60%) */}
           <div className="md:col-span-3 space-y-4">
             {/* Main Image */}
             <motion.div
-              className="relative rounded-3xl overflow-hidden bg-lustre h-[480px] cursor-zoom-in group"
+              className="relative rounded-3xl overflow-hidden bg-lustre h-[380px] cursor-zoom-in group"
               onClick={() => setZoomed(true)}
               data-cursor="product"
             >
@@ -258,7 +258,7 @@ export default function ProductDetail() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-20"
+            className="mt-12"
           >
             <h2 className="font-poppins font-bold text-2xl text-ethereal mb-8">
               Technical <span className="gradient-text">Specifications</span>
@@ -276,7 +276,7 @@ export default function ProductDetail() {
 
         {/* Similar Products */}
         {similar.length > 0 && (
-          <div className="mt-24">
+          <div className="mt-14">
             <h2 className="font-poppins font-bold text-2xl text-ethereal mb-8">
               Similar <span className="gradient-text">Products</span>
             </h2>

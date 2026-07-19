@@ -55,7 +55,7 @@ export default function HeroSection() {
   }));
 
   return (
-    <section ref={heroRef} className="hero-mobile-dark relative min-h-screen flex items-center overflow-hidden bg-void">
+    <section ref={heroRef} className="hero-mobile-dark relative min-h-[78vh] flex items-center overflow-hidden bg-void">
       <div
         className="hero-mobile-image absolute inset-0 md:hidden bg-center bg-cover"
         style={{ backgroundImage: "url('https://res.cloudinary.com/dk8odjbsk/image/upload/v1784452492/easyva_bg_oig26y.jpg')" }}
@@ -76,13 +76,13 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-6 py-32 grid md:grid-cols-2 gap-16 items-center">
+      <div className="relative max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-10 items-center">
         <div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex items-center gap-2 mb-6"
+            className="flex items-center gap-2 mb-4"
           >
             <div className="w-1 h-6 bg-biolume rounded-full" />
             <span className="micro-label text-white">Home and kitchen | Home decor | Art and craft | Embroidery kit</span>
@@ -92,7 +92,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="display-xl font-poppins text-ethereal mb-6"
+            className="display-xl font-poppins text-ethereal mb-4"
           >
             Style Your Home.
             <br />
@@ -103,7 +103,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.45 }}
-            className="body-lg text-ethereal/60 mb-10 max-w-md"
+            className="body-lg text-ethereal/60 mb-6 max-w-md"
           >
             Shop home essentials, decor accents, craft supplies and embroidery kits curated for everyday living and thoughtful gifting.
           </motion.p>
@@ -140,7 +140,7 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="flex gap-8 mt-12"
+            className="flex gap-8 mt-8"
           >
             {[
               { n: '4', l: 'Core Categories' },
@@ -155,7 +155,7 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        <div className="relative h-[500px] hidden md:block">
+        <div className="relative h-[470px] hidden md:block">
           <motion.div
             style={{ rotateY: springX, rotateX: springY }}
             className="relative w-full h-full"
@@ -166,12 +166,12 @@ export default function HeroSection() {
               initial={{ opacity: 0, scale: 0.8, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="absolute top-10 left-10 right-10 glass rounded-3xl overflow-hidden border border-iris/20 shadow-2xl"
+              className="absolute top-8 left-10 right-10 glass rounded-3xl overflow-hidden border border-iris/20 shadow-2xl"
             >
               <img
                 src="https://res.cloudinary.com/dk8odjbsk/image/upload/v1784452492/easyva_bg_oig26y.jpg"
                 alt="Easyva home, decor and craft products"
-                className="w-full h-72 object-cover"
+                className="w-full h-64 object-cover"
               />
               <div className="p-4 flex justify-between items-center">
                 <div>
@@ -186,7 +186,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0, y: [0, -10, 0] }}
               transition={{ duration: 0.7, delay: 0.6, y: { duration: 4, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut', delay: 1 } }}
-              className="absolute bottom-20 right-0 w-40 glass rounded-2xl p-3 border border-biolume/20"
+              className="absolute bottom-12 right-0 w-40 glass rounded-2xl p-3 border border-biolume/20"
             >
               <div className="w-8 h-8 rounded-lg bg-biolume/20 flex items-center justify-center mb-2">
                 <Sparkles size={14} className="text-biolume" />

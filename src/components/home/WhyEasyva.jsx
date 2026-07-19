@@ -46,7 +46,7 @@ export default function WhyEasyva() {
       <div className="absolute inset-0 bg-gradient-to-b from-void via-transparent to-void pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6">
-        <div className="text-center mb-10">
+        <div className="text-center mb-7">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

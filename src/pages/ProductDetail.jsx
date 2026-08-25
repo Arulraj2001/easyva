@@ -122,7 +122,7 @@ export default function ProductDetail() {
                   key={activeImg}
                   src={images[activeImg]}
                   alt={product.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain object-center p-6"
                   initial={{ opacity: 0, scale: 1.05 }}
                   animate={{ opacity: 1, scale: zoomed ? 1.2 : 1 }}
                   exit={{ opacity: 0 }}
@@ -164,7 +164,7 @@ export default function ProductDetail() {
                       activeImg === i ? 'border-iris shadow-lg shadow-iris/30' : 'border-white/10 hover:border-white/30'
                     }`}
                   >
-                    <img src={img} alt="" className="w-full h-full object-cover" />
+                    <img src={img} alt="" className="w-full h-full object-contain object-center p-1" />
                   </motion.button>
                 ))}
               </div>

@@ -29,7 +29,7 @@ export default function ProductCard({ product, index = 0 }) {
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10 shimmer overflow-hidden rounded-xl" />
 
         {/* Image */}
-        <div className="relative overflow-hidden h-40 bg-lustre">
+        <div className="relative overflow-hidden h-44 bg-lustre">
           {/* Loading skeleton */}
           {!imageLoaded && (
             <div className="absolute inset-0 bg-lustre/50 animate-pulse" />
@@ -37,12 +37,11 @@ export default function ProductCard({ product, index = 0 }) {
           <motion.img
             src={image}
             alt={product.title}
-            className={`w-full h-full object-cover ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-            animate={{ scale: hovered ? 1.07 : 1 }}
+            className={`w-full h-full object-contain object-center p-3 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+            animate={{ scale: hovered ? 1.06 : 1 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             onLoad={() => setImageLoaded(true)}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-void/60 via-transparent to-transparent" />
 
           {/* Badges */}
           <div className="absolute top-3 left-3 flex gap-2">

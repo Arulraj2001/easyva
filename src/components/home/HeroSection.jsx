@@ -166,15 +166,14 @@ export default function HeroSection() {
               initial={{ opacity: 0, scale: 0.8, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="absolute top-8 left-10 right-10 h-72 glass rounded-3xl overflow-hidden border border-iris/20 shadow-2xl"
+              className="absolute top-8 left-10 right-10 glass rounded-3xl overflow-hidden border border-iris/20 shadow-2xl"
             >
               <img
                 src="https://res.cloudinary.com/dk8odjbsk/image/upload/v1784452492/easyva_bg_oig26y.jpg"
                 alt="Easyva home, decor and craft products"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="w-full h-64 object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-void/95 via-void/55 to-void/15" />
-              <div className="absolute bottom-0 inset-x-0 p-4 flex justify-between items-end gap-2">
+              <div className="p-4 flex justify-between items-center">
                 <div>
                   <p className="micro-label text-iris-light mb-0.5">Featured Category</p>
                   <p className="font-poppins font-semibold text-ethereal">Embroidery Starter Kits</p>

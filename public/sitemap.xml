@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://easyva.in/</loc>
+    <loc>https://easyva.vercel.app/</loc>
   </url>
   <url>
-    <loc>https://easyva.in/products</loc>
+    <loc>https://easyva.vercel.app/products</loc>
   </url>
   <url>
-    <loc>https://easyva.in/about</loc>
+    <loc>https://easyva.vercel.app/about</loc>
   </url>
   <url>
-    <loc>https://easyva.in/faq</loc>
+    <loc>https://easyva.vercel.app/faq</loc>
   </url>
   <url>
-    <loc>https://easyva.in/contact</loc>
+    <loc>https://easyva.vercel.app/contact</loc>
   </url>
 </urlset>

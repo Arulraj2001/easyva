@@ -1,5 +1,5 @@
 const SITE_NAME = 'Easyva';
-const SITE_URL = 'https://easyva.in';
+const SITE_URL = 'https://easyva.vercel.app';
 const DEFAULT_TITLE = 'Easyva | Home and Kitchen, Decor, Craft and Embroidery Kits';
 const DEFAULT_DESCRIPTION =
   'Shop Easyva for home and kitchen products, home decor, art and craft supplies, and embroidery kits in India.';
